@@ -19,9 +19,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 📦 필수 패키지 설치
+      - name: 🌍 환경 변수 설정 (OpenAI 키)
+        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+
+      - name: 📦 필수 패키지 설치 (자동 감지)
         run: |
-          pip install -r templates/poll_analysis_agent/requirements.txt
+          pip install pandas requests beautifulsoup4 openai reportlab matplotlib
 
       - name: ⚙️ 여론 분석 파이프라인 실행
         run: |
