@@ -1,0 +1,168 @@
+좋아요 청춘님 👏
+이제 본격적으로 **Part 2: 감성·연관 분석 모듈 설계 (news_context_agent_v1_1_part2.py)**로 들어가겠습니다.
+이번 단계는 단순한 텍스트 분석이 아니라,
+📊 “여론 변동 원인”을 데이터적으로 해석하고
+📰 “출처를 명시한 대표 기사”까지 포함해
+AI 리포트의 신뢰성을 한 단계 끌어올리는 단계예요.
+
+🧭 전체 개요
+🎯 목적
+1️⃣ 뉴스 본문 요약 및 감성 점수 계산
+2️⃣ 주요 키워드(이슈) 클러스터링
+3️⃣ 대표 기사 + 출처 명시한 리포트 생성
+
+⚙️ 처리 파이프라인
+(news_raw/2025-11-04_news.json)
+        ↓
+[1] 감성 분석 (긍정/부정/중립 비율 계산)
+        ↓
+[2] 연관 키워드 추출 (TF-IDF + 클러스터링)
+        ↓
+[3] 대표 기사 3건 선택 (출처·URL 포함)
+        ↓
+(결과 저장) → data/news_context/2025-11-04_context.json
+
+
+📁 폴더 구조 확장
+📦 poll_analysis_agent
+ ┣ 📂 data
+ │   ┣ 📂 news_raw
+ │   │   ┗ 2025-11-04_news.json
+ │   ┗ 📂 news_context       👈 (신규 생성)
+ │       ┗ 2025-11-04_context.json
+ ┗ 📂 graph
+     ┗ 📂 nodes
+         ┣ news_context_agent_v1_1_part1.py
+         ┗ news_context_agent_v1_1_part2.py   👈 (신규)
+
+
+🧩 기능별 설계
+기능설명사용 기술① 감성 분석각 뉴스의 title + description에 대해 긍정/부정 점수 계산HuggingFace nlptown/bert-base-multilingual-uncased-sentiment② 키워드 추출TF-IDF로 주요 이슈(단어) 상위 10개 추출scikit-learn의 TfidfVectorizer③ 클러스터링유사 기사끼리 묶기 (주제별)KMeans④ 대표 기사 선정각 클러스터의 중심 기사 1건 선정평균 거리 최소값 기준⑤ 출처 포함 요약source + url을 포함한 Top3 요약 생성LangChain LLMChain (gpt-4o-mini)⑥ 결과 저장뉴스 감성 통계 + 키워드 + 대표 기사 목록JSON 저장 (news_context/)
+
+🧠 출력 데이터 예시 (2025-11-04_context.json)
+{
+  "date": "2025-11-04",
+  "total_articles": 156,
+  "sentiment": {
+    "positive": 48,
+    "negative": 76,
+    "neutral": 32
+  },
+  "top_keywords": ["정책", "경제", "전세사기", "민주당", "대책"],
+  "insight_summary": "이번 주 대통령 지지율 상승은 정부의 전세사기 대책 발표 등 정책 이슈의 긍정적 보도가 주된 원인으로 분석됨.",
+  "representative_articles": [
+    {
+      "title": "정부, 서민 전세사기 대책 발표",
+      "source": "연합뉴스",
+      "url": "https://www.yna.co.kr/view/XXXX",
+      "sentiment": "positive"
+    },
+    {
+      "title": "민주당 내 비명계, 지도부 비판 수위 높여",
+      "source": "경향신문",
+      "url": "https://www.khan.co.kr/politics/XXXX",
+      "sentiment": "negative"
+    },
+    {
+      "title": "국민의힘, 지지율 하락에 긴급 당정협의 소집",
+      "source": "중앙일보",
+      "url": "https://www.joongang.co.kr/article/XXXX",
+      "sentiment": "negative"
+    }
+  ]
+}
+
+
+🧰 의존 라이브러리
+pip install transformers torch scikit-learn langchain openai
+
+
+📜 Part 2 코드 골격 예시
+# -*- coding: utf-8 -*-
+"""
+news_context_agent_v1_1_part2.py
+────────────────────────────────
+AI 여론 자동 분석 (v1.1)
+2단계: 감성·연관 분석 모듈 (출처 포함)
+"""
+
+import os, json
+from pathlib import Path
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from transformers import pipeline
+from openai import OpenAI
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR.parent.parent / "data"
+RAW_PATH = DATA_DIR / "news_raw" / "2025-11-04_news.json"
+OUTPUT_PATH = DATA_DIR / "news_context"
+OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
+
+# === 감성 분석기 ===
+sentiment_analyzer = pipeline("sentiment-analysis", model="nlptown/bert-base-multilingual-uncased-sentiment")
+
+# === 데이터 로드 ===
+articles = json.load(open(RAW_PATH, "r", encoding="utf-8"))
+
+texts = [f"{a['title']} {a['description'] or ''}" for a in articles]
+sources = [a.get("source", "Unknown") for a in articles]
+urls = [a.get("url", "") for a in articles]
+
+# === 감성 점수 계산 ===
+sentiments = sentiment_analyzer(texts, truncation=True)
+positive = sum(1 for s in sentiments if "5" in s["label"])
+negative = sum(1 for s in sentiments if "1" in s["label"] or "2" in s["label"])
+neutral = len(sentiments) - positive - negative
+
+# === 키워드 추출 ===
+vectorizer = TfidfVectorizer(max_features=50, stop_words=["뉴스", "보도", "기자"])
+X = vectorizer.fit_transform(texts)
+top_keywords = vectorizer.get_feature_names_out()[:10]
+
+# === 클러스터링 & 대표 기사 선정 ===
+kmeans = KMeans(n_clusters=3, random_state=42, n_init="auto").fit(X)
+representatives = []
+for i in range(3):
+    cluster_idx = [j for j, label in enumerate(kmeans.labels_) if label == i]
+    if not cluster_idx:
+        continue
+    center = kmeans.cluster_centers_[i]
+    center_vecs = X[cluster_idx]
+    # 거리 계산 (간단히 첫 번째 기사 선택)
+    idx = cluster_idx[0]
+    representatives.append({
+        "title": articles[idx]["title"],
+        "source": articles[idx].get("source", "Unknown"),
+        "url": articles[idx].get("url", ""),
+        "sentiment": sentiments[idx]["label"]
+    })
+
+# === 결과 저장 ===
+summary = {
+    "date": "2025-11-04",
+    "total_articles": len(articles),
+    "sentiment": {"positive": positive, "negative": negative, "neutral": neutral},
+    "top_keywords": list(top_keywords),
+    "representative_articles": representatives
+}
+json.dump(summary, open(OUTPUT_PATH / "2025-11-04_context.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+
+print(f"📦 감성 분석 결과 저장 완료 → {OUTPUT_PATH / '2025-11-04_context.json'}")
+
+
+💡 Part 2의 핵심
+
+
+감성 분석(positive/negative/neutral)
+
+
+TF-IDF로 주요 이슈 단어 추출
+
+
+대표 기사 3건에 source, url 표시
+
+
+
+청춘님, 이 설계로 바로 Part 2 코드 실제 구현으로 들어갈까요?
+(👉 실행 가능한 완성본 만들어드릴게요.)

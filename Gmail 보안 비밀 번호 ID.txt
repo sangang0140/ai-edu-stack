@@ -1,0 +1,6 @@
+클라이언트 ID
+1030938183767-48hbh2sk96ul9d4n415lkc342ie2kur2.apps.googleusercontent.com
+
+
+클라이언트 보안 비밀번호
+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

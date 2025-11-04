@@ -1,0 +1,3685 @@
+LangChain, RAG, LangGraph를 활용하여 첫 번째 템플릿 ‘검사지+NeuroHarmony+다문화 학생 검사지 통합 자동화를 본격적으로 만들자. 지금까지 지희와 대화했던 내용을 상기하면서 먼저 전체 이 작업에 대한 워크 플로우를 짜줘.
+12s 동안 생각함
+나의 말:
+이 첫 번째 템플릿을 완성할 수 있도록 처음 단계부터 차근차근 내용을 알려 줘. 
+나의 말:
+위에 있는 켄버스는 이 템플릿을 만들기 위한 전체 요약 코딩인 거니? 간단히 대답해줘.
+나의 말:
+캔버스에 올린 bootstrap_py 블록만 다시 생성해 줘.
+나의 말:
+이 파일을 anaconda prompt에서 실행하라는 거야? 간단히 대답해줘.
+나의 말:
+내가 직접 폴더를 만들었어. VS Code에서 검사지_통합 폴더를 열고 bootstrap_py 파일을 만든 다음 이 코드를 붙여넣기 한 다음 Anaconda Prompt에서 실행하라는 거야? 
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python bootstrap_py.py
+  File "D:\ai-edu-stack\templates\검사지_통합\bootstrap_py.py", line 212
+    generate_report_py = dedent(
+                               ^
+SyntaxError: '(' was never closed
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python bootstrap_py.py
+  File "D:\ai-edu-stack\templates\검사지_통합\bootstrap_py.py", line 212
+    generate_report_py = dedent(
+                               ^
+SyntaxError: '(' was never closed
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python bootstrap_py.py
+  File "D:\ai-edu-stack\templates\검사지_통합\bootstrap_py.py", line 212
+    generate_report_py = dedent(
+                               ^
+SyntaxError: '(' was never closed
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python bootstrap_py.py
+  File "D:\ai-edu-stack\templates\검사지_통합\bootstrap_py.py", line 212
+    generate_report_py = dedent(
+                               ^
+SyntaxError: '(' was never closed
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python bootstrap_min.py
+✔ 스켈레톤 생성 완료: D:\ai-edu-stack\templates\검사지_통합
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+bootstrap_min.py를 bootstrap_py.py로 이름을 바꿀까? 간단히 대답
+나의 말:
+  Attempting uninstall: langchain-core
+    Found existing installation: langchain-core 0.3.75
+    Uninstalling langchain-core-0.3.75:
+      Successfully uninstalled langchain-core-0.3.75
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+sphinx 7.3.7 requires docutils<0.22,>=0.18.1, but you have docutils 0.22 which is incompatible.
+streamlit 1.37.1 requires protobuf<6,>=3.20, but you have protobuf 6.32.1 which is incompatible.
+Successfully installed PyPDF2-3.0.1 backoff-2.2.1 bcrypt-5.0.0 build-1.3.0 chromadb-1.1.1 coloredlogs-15.0.1 dataclasses-json-0.6.7 durationpy-0.10 fastapi-0.118.2 flatbuffers-25.9.23 google-auth-2.41.1 googleapis-common-protos-1.70.0 grpcio-1.75.1 httptools-0.6.4 httpx-sse-0.4.2 humanfriendly-10.0 importlib-resources-6.5.2 kubernetes-34.1.0 langchain-community-0.3.31 langchain-core-0.3.78 marshmallow-3.26.1 oauthlib-3.3.1 onnxruntime-1.23.1 opentelemetry-api-1.37.0 opentelemetry-exporter-otlp-proto-common-1.37.0 opentelemetry-exporter-otlp-proto-grpc-1.37.0 opentelemetry-proto-1.37.0 opentelemetry-sdk-1.37.0 opentelemetry-semantic-conventions-0.58b0 posthog-5.4.0 protobuf-6.32.1 pybase64-1.4.2 pydantic-settings-2.11.0 pypika-0.48.9 pyproject_hooks-1.2.0 pyreadline3-3.5.4 requests-2.32.5 requests-oauthlib-2.0.0 rsa-4.9.1 starlette-0.48.0 typing-extensions-4.15.0 typing-inspect-0.9.0 typing-inspection-0.4.2 uvicorn-0.37.0 watchfiles-1.1.0 websockets-15.0.1
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+"py -3.10 -m venv .venv .venv\Scripts\activate pip install -r requirements.txt python app.py" 이렇게 실행했어. 대답 간단히
+나의 말:
+outputs\reports\report_S001.md가 생성됐는지 어떻게 확인해?
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>dir outputs\reports
+ D 드라이브의 볼륨에는 이름이 없습니다.
+ 볼륨 일련 번호: 8201-2DA5
+
+ D:\ai-edu-stack\templates\검사지_통합\outputs\reports 디렉터리
+
+2025-10-09  오전 10:17    <DIR>          .
+2025-10-09  오전 10:17    <DIR>          ..
+2025-10-09  오전 10:17               477 report_S001.md
+               1개 파일                 477 바이트
+               2개 디렉터리  1,310,807,617,536 바이트 남음
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+student_id	Q1	Q2	Q3	Q4	Q5
+S001	3	4	5	2	4
+나의 말:
+"# 기존
+df = pd.read_csv(forms_csv)
+
+# 교체 (두 파일 모두)
+df = pd.read_csv(forms_csv, sep=None, engine="python") 이 코드는 Anaconda Prompt에서 실행해? 
+"
+나의 말:
+
+graph/nodes/validate_schema.py
+graph/nodes/score_engine.py 이 두파일의 경로는? 간단히
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 9
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+"실제 폼 CSV로 테스트 → app.py 마지막 줄 경로만 바꿔 실행." 자세히 알려줘
+나의 말:
+파일 위치: D:\ai-edu-stack\templates\검사지_통합\data\raw\ 여기에 엑셀 파일 'forms_2025-10-09.csv'를 단드라는 거야? rkseksgl
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {}
+Log events: 2
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>dir data\raw\forms_2025-10-09.csv
+ D 드라이브의 볼륨에는 이름이 없습니다.
+ 볼륨 일련 번호: 8201-2DA5
+
+ D:\ai-edu-stack\templates\검사지_통합\data\raw 디렉터리
+
+2025-10-09  오전 10:44                 5 forms_2025-10-09.csv
+               1개 파일                   5 바이트
+               0개 디렉터리  1,310,807,617,536 바이트 남음
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type data\raw\forms_2025-10-09.csv
+癤?
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>dir data\raw\forms_2025-10-09.csv
+ D 드라이브의 볼륨에는 이름이 없습니다.
+ 볼륨 일련 번호: 8201-2DA5
+
+ D:\ai-edu-stack\templates\검사지_통합\data\raw 디렉터리
+
+2025-10-09  오전 10:52                 5 forms_2025-10-09.csv
+               1개 파일                   5 바이트
+               0개 디렉터리  1,310,807,617,536 바이트 남음
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {}
+Log events: 2
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 9
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# ?듯빀 寃곌낵 ?붿빟 (v0.1)
+
+**?숈깮**: ?띻만??(S001)  |  **?숇뀈**: 6
+
+## 1) ?듭떖 吏??
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 由ъ뒪???뚮옒洹?
+[]
+
+## 3) ?댁꽍 ?붿빟
+?붿빟: ?듭떖 吏??{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4二?媛쒖엯 沅뚭퀬(?붿빟)
+- ?숇?紐? 媛?뺤뿉??10遺????+ 二?2???덈젴
+- ?숆탳: ?댁엫怨?二쇨컙 ?먭? 猷⑦떞
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+위 코드들은 "D:\ai-edu-stack\templates\검사지_통합"에서 실행하면 돼? 간단히
+나의 말:
+다음 단계로 NeuroHarmony PDF/.ban 파서 붙이기부터 바로 이어가기 전에 지금 우리가 했던 작업 내용을 간단히 요약해줘.
+나의 말:
+이정수_202509181744.bqf.pdf
+PDF
+샘플을 올렸어.
+26s 동안 생각함
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>        "data/raw/forms_2025-10-09.csv",
+
+(base) D:\ai-edu-stack\templates\검사지_통합>        neuro_pdf=r"data/raw/neuro/이정수_202509181744.bqf.pdf"   # ← 이  줄 꼭 필요
+'neuro_pdf' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>    )
+(base) D:\ai-edu-stack\templates\검사지_통합>    print("Report:", st.report)
+Unable to initialize device PRN
+
+(base) D:\ai-edu-stack\templates\검사지_통합>    print("Log events:", len(st.log))
+Unable to initialize device PRN
+
+(base) D:\ai-edu-stack\templates\검사지_통합>    print("Parsed neuro:", st.raw_inputs.get("neuro_parsed"))
+Unable to initialize device PRN
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야 내가 차근차근 하나씩 물어볼게.
+
+ VS Code로 app.py 열어서 맨 위 임포트에 neuro_parse 추가한다는 걸 알려줘.
+나의 말:
+했어.
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 2
+    from graph.nodes import (
+                            ^
+SyntaxError: '(' was never closed
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>scores_fmt = {k: (round(v,1) if isinstance(v,(int,float)) else v) for k,v in scores.items()}
+'scores_fmt' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>scores_fmt = {k: (round(v,1) if isinstance(v,(int,float)) else v) for k,v in scores.items()}
+'scores_fmt' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 43, in <module>
+    st = run_pipeline(
+         ^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 35, in run_pipeline
+    state = generate_report.run(state)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 25, in run
+    scores=scores.fmt, flags=flags, summary=analysis.get('summary','-'),
+           ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'fmt'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 43, in <module>
+    st = run_pipeline(
+         ^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 35, in run_pipeline
+    state = generate_report.run(state)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 20, in run
+    summary_text = analysis.get("summary") or f"요약: 핵심 지표 {scores_fmt}."   # ★ 추가
+                   ^^^^^^^^
+UnboundLocalError: cannot access local variable 'analysis' where it is not associated with a value
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+REPORT_TEMPLATE.format(
+        name=student.name or '-', sid=student.id, grade=student.grade or '-',
+        scores=scores_fmt, flags=flags, summary=summary_text('summary','-'),
+        parent='가정에서 10분 대화 + 주 2회 훈련', school='담임과 주간 점검 루틴',
+    )  확인해줘
+나의 말:
+md = REPORT_TEMPLATE.format(
+    name=student.name or "-",
+    sid=student.id,
+    grade=student.grade or "-",
+    scores=scores_fmt,
+    flags=flags,
+    summary=summary_text,  # ← 이렇게만!
+    parent="가정에서 10분 대화 + 주 2회 훈련",
+    school="담임과 주간 점검 루틴",
+    out = OUTPUT / f'report_{student.id}.md'
+    out.write_text(md, encoding='utf-8')
+    state.report = {'md': str(out)}
+    state.log_event('generate_report', {'path': str(out)})
+    return state  확인해줘
+나의 말:
+ md = REPORT_TEMPLATE.format(
+    name=student.name or "-",
+    sid=student.id,
+    grade=student.grade or "-",
+    scores=scores_fmt,
+    flags=flags,
+    summary=summary_text,  # ← 이렇게만!
+    parent="가정에서 10분 대화 + 주 2회 훈련",
+    school="담임과 주간 점검 루틴",
+)
+
+    out = OUTPUT / f'report_{student.id}.md'
+    out.write_text(md, encoding='utf-8')
+    state.report = {'md': str(out)}
+    state.log_event('generate_report', {'path': str(out)})
+    return state  확인해줘
+나의 말:
+ flags = state.scores.get('flags', [])
+    analysis = state.analysis or {}
+    md = REPORT_TEMPLATE.format(
+    name=student.name or "-",
+    sid=student.id,
+    grade=student.grade or "-",
+    scores=scores_fmt,
+    flags=flags,
+    summary=summary_text,  # ← 이렇게만!
+    parent="가정에서 10분 대화 + 주 2회 훈련",
+    school="담임과 주간 점검 루틴",
+)
+
+out = OUTPUT / f'report_{student.id}.md'
+out.write_text(md, encoding='utf-8')
+state.report = {'md': str(out)}
+state.log_event('generate_report', {'path': str(out)})
+return state  확인해줘 
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\__init__.py", line 1, in <module>
+    from . import ingest_inputs, validate_schema, score_engine, rag_interpreter, generate_report, human_review, persist_records, notify_and_tasks, audit_and_eval
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 40
+    return state
+    ^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.76623376623378, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 93.8, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야, 현재 템플릿에서 LangGraph 관련 어떤 Node가 만들어진거야?
+나의 말:
+".ban 또는 추가 PDF 항목 파싱
+neuro_parse.py에 .ban 지원(+ SMR 가중치 반영) 추가" 이걸하는 목적은 뭔지 알려줘.
+나의 말:
+그러면 다른 사람들의 PDF 파일을 올려줄까? 올려준다면 몇 장 정도?
+나의 말:
+지희야, BQ2로 바뀌면서 우리는 ban을 받을 수 없고 곧 바로 pdf로만 출력이 가능해. 이점 감안해줘.
+나의 말:
+python-dotenv
+pydantic>=2
+pandas
+PyPDF2
+jinja2
+langchain>=0.2
+langchain-community>=0.2
+langgraph>=0.2
+chromadb
+fastapi
+uvicorn
+여기에 pdfplumber 를 삽입하라는 거야? 간단히 
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': 5.5, 'betaL_rel_open': 5.5, 'betaH_rel_open': 5.5, 'smr_rel_open': 5.5, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 100.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 100.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+1) 콘솔에 뜨는 FontBBox... 메시지, 2) 추출값이 전부 5.5 → 파싱 오탐 가능성 높음
+
+이 두 가지를 지금 꼭 해야 해?
+나의 말:
+"neuro_parse.py의 run() 끝부분에서 theta/betaL/betaH/smr 계산 직후"에서 계산 직후는 뭘 의미하는 거야?
+나의 말:
+# 좌/우 평균 (개안 상대세기라고 가정)
+    theta = _avg_pair(*(pairs.get("Theta") or (None, None)))
+    betaL = _avg_pair(*(pairs.get("BetaL") or (None, None)))
+    betaH = _avg_pair(*(pairs.get("BetaH") or (None, None)))
+    smr   = _avg_pair(*(pairs.get("SMR")   or (None, None)))
+이 다음에 
+
+나의 말:
+    except Exception:
+        pass
+
+    # 좌/우 평균 (개안 상대세기라고 가정)
+    theta = _avg_pair(*(pairs.get("Theta") or (None, None)))
+    betaL = _avg_pair(*(pairs.get("BetaL") or (None, None)))
+    betaH = _avg_pair(*(pairs.get("BetaH") or (None, None)))
+    smr   = _avg_pair(*(pairs.get("SMR")   or (None, None)))
+# --- 스케일(오탐) 가드: 네 값이 거의 같고 5~6 근처면 표 스케일값으로 판단해 재파싱 ---
+vals = [v for v in [theta, betaL, betaH, smr] if v is not None]
+if len(vals) >= 3 and (max(vals) - min(vals) < 0.7) and (5.0 <= sum(vals)/len(vals) <= 6.0):
+    # 표 기반 오탐 → 텍스트만 다시 파싱
+    full_text = all_text or _parse_with_pypdf2(str(pdf_path))
+    focus_text = _best_block(full_text)
+    text_pairs = _parse_pairs_from_text(focus_text)
+    theta = _avg_pair(*(text_pairs.get("Theta") or (None, None)))
+    betaL = _avg_pair(*(text_pairs.get("BetaL") or (None, None)))
+    betaH = _avg_pair(*(text_pairs.get("BetaH") or (None, None)))
+    smr   = _avg_pair(*(text_pairs.get("SMR")   or (None, None)))
+    
+
+    parsed = {
+        "theta_rel_open": theta,
+        "betaL_rel_open": betaL,
+        "betaH_rel_open": betaH,
+        "smr_rel_open": smr,
+        "source": "pdfplumber+text" if pairs else "text_only"
+    }, 봐줘
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+'        pairs, all_text = _parse_with_pdfplumber(str(pdf_path))
+    except Exception:
+        pass' 이 뒤에 '# 디버그용 텍스트 덤프 (선택)
+debug_dir = Path(__file__).resolve().parents[2] / "outputs" / "debug"
+debug_dir.mkdir(parents=True, exist_ok=True)
+try:
+    (debug_dir / "neuro_text.txt").write_text(_best_block(all_text or ""), encoding="utf-8")
+except Exception:
+    pass
+' 이걸 넣으라는 말아야? 간단히 설명해줘
+나의 말:
+def run(state: PipelineState) -> PipelineState:
+    pdf_path = state.raw_inputs.get("neuro_pdf")
+    if not pdf_path:
+        state.log_event("neuro_parse", {"status": "no_pdf"})
+        return state
+
+    pdf_path = Path(pdf_path)
+    if not pdf_path.exists():
+        alt = NEURO_DIR / pdf_path.name
+        if alt.exists():
+            pdf_path = alt
+        else:
+            state.log_event("neuro_parse", {"status": "not_found", "path": str(pdf_path)})
+            return state
+
+    # 1) pdfplumber로 표 기반 추출 시도
+    pairs, all_text = {}, ""
+    try:
+        pairs, all_text = _parse_with_pdfplumber(str(pdf_path))
+    except Exception:
+        pass
+
+    # 디버그용 텍스트 덤프 (선택)
+    debug_dir = Path(__file__).resolve().parents[2] / "outputs" / "debug"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    try:
+    (debug_dir / "neuro_text.txt").write_text(_best_block(all_text or ""), encoding="utf-8")
+    except Exception:
+    pass
+    
+    # 2) 표에서 못 찾은 라벨은 텍스트에서 보완
+    try:
+        if not all_text:
+            all_text = _parse_with_pypdf2(str(pdf_path))
+        focus_text = _best_block(all_text)
+        text_pairs = _parse_pairs_from_text(focus_text)
+        for k, v in text_pairs.items():
+            pairs.setdefault(k, v)
+    except Exception:
+        pass
+
+봐줘.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# ?듯빀 寃곌낵 ?붿빟 (v0.1)
+
+**?숈깮**: ?띻만??(S001)  |  **?숇뀈**: 6
+
+## 1) ?듭떖 吏??
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 由ъ뒪???뚮옒洹?
+[]
+
+## 3) ?댁꽍 ?붿빟
+?붿빟: ?듭떖 吏??{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4二?媛쒖엯 沅뚭퀬(?붿빟)
+- ?숇?紐? 媛?뺤뿉??10遺????+ 二?2???덈젴
+- ?숆탳: ?댁엫怨?二쇨컙 ?먭? 猷⑦떞
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+'out.write_text(md, encoding="utf-8-sig")
+' 이건 이미 돼있어. 'chcp 65001
+type outputs\reports\report_S001.md
+' 이건 어떻게 하라는 거야?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야. 지금 알려준 코드들은 anaconda prompt 혹은 VS Coade 등어디에서 실행해야 하는지 앞으로는 꼭 알려줘. 1)~4)부터 해줘.
+나의 말:
+# 1) pdfplumber로 표 기반 추출 시도
+    pairs, all_text = {}, ""
+    try:
+        pairs, all_text = _parse_with_pdfplumber(str(pdf_path))
+    except Exception:
+        pass
+
+    # all_text가 비면 텍스트로 보충
+    if not all_text:
+        try:
+            all_text = _parse_with_pypdf2(str(pdf_path))
+        except Exception:
+            all_text = ""   
+
+    # 디버그용 텍스트 덤프 (선택)
+    debug_dir = Path(__file__).resolve().parents[2] / "outputs" / "debug"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        (debug_dir / "neuro_text.txt").write_text(_best_block(all_text or ""), encoding="utf-8")
+    except Exception:
+        pass
+    
+    # 2) 표에서 못 찾은 라벨은 텍스트에서 보완
+    try:
+        focus_text = _best_block(all_text)
+        text_pairs = _parse_pairs_from_text(focus_text)
+        for k, v in text_pairs.items():
+            pairs.setdefault(k, v)
+    except Exception:
+        pass
+잘 돼었니? 간단히 대답
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+'# 기존 텍스트 파서로 못 잡으면, 붙은 소수 테이블 파서 시도
+if not text_pairs:
+    text_pairs = _parse_compact_table(all_text)
+' 이 내용은 어떤 파일에 넣는거야? 파일 이름을 알려줘. 간단히
+나의 말:
+text_pairs = _parse_pairs_from_text(focus_text) 이게 몇 번째 셀 쯤 있는거니?
+나의 말:
+# 2) 표에서 못 찾은 라벨은 텍스트에서 보완
+    try:
+        focus_text = _best_block(all_text)
+        text_pairs = _parse_pairs_from_text(focus_text)
+    if not text_pairs:
+        text_pairs = _parse_compact_table(all_text) 잘 된거야?
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 69
+    전략: 라벨 순서를 잡고, 다음 1~2줄에서 모든 실수를 추출 → [L1,R1,L2,R2,...]로 매핑.
+                                       ^
+SyntaxError: invalid character '→' (U+2192)
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 67
+    Case: label line like 'Delta Theta Alpha SMR BetaL BetaH Gamma'
+                ^^^^
+SyntaxError: invalid syntax
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 72
+    1) Detect the label line containing Delta/Theta/Alpha/SMR/BetaL/BetaH.
+     ^
+SyntaxError: unmatched ')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>cd D:\ai-edu-stack\templates\검사지_통합
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 65
+    '44.553.8' -> '44.55 3.8', '20.720.9' -> '20.7 20.9' 처럼
+               ^^
+SyntaxError: invalid syntax
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 디버그(핵심 블록)와 리포트 확인
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 79
+    '44.553.8' -> '44.55 3.8', '20.720.9' -> '20.7 20.9' 처럼
+               ^^
+SyntaxError: invalid syntax
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 75
+    '44.553.8' -> '44.55 3.8', '20.720.9' -> '20.7 20.9' 처럼
+               ^^
+SyntaxError: invalid syntax
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합> 자꾸 에러가 나는데 내가 뭔가 잘못하고 있니?
+나의 말:
+'# ---- compact table parser (label line + glued numbers on next lines) ----
+def _parse_compact_table(text: str) -> dict:
+    import re
+    # find label line (Delta / Theta / Alpha / SMR / BetaL / BetaH)
+    label_line = None
+    for ln in text.splitlines():
+        if re.search(r"(Delta|델타).*(Theta|세타|θ).*(Alpha|알파).*(SMR|에스엠알).*(BetaL|저\s*베타|βL).*(BetaH|고\s*베타|βH)", ln, re.I):
+            label_line = ln
+            break
+    if not label_line:
+        return {}
+
+    # normalize order
+    order, toks = [], label_line.split()
+    for tok in toks:
+        t = tok.lower()
+        if "delta" in t or "델타" in t: order.append("Delta")
+        elif "theta" in t or "세타" in t or "θ" in t: order.append("Theta")
+        elif "alpha" in t or "알파" in t: order.append("Alpha")
+        elif "smr" in t or "sensorimotor" in t or "에스엠알" in t: order.append("SMR")
+        elif "betal" in t or ("beta" in t and "low" in t) or "βl" in t or "저" in t: order.append("BetaL")
+        elif "betah" in t or ("beta" in t and "high" in t) or "βh" in t or "고" in t: order.append("BetaH")
+        elif "gamma" in t or "감마" in t: order.append("Gamma")
+
+    # take next lines, unglue decimals, extract numbers
+    lines = text.splitlines()
+    idx = lines.index(label_line)
+    tail = "\n".join(lines[idx+1: idx+6])
+    tail = _unglue_numbers(tail)
+    nums = re.findall(r"[+-]?\d+(?:[.,]\d+)?%?", tail)
+
+    vals = []
+    for s in nums:
+        s = s.rstrip("%").replace(",", ".")
+        try: vals.append(float(s))
+        except: pass
+
+    # map as [L1,R1,L2,R2,...]
+    pairs, i = {}, 0
+    for lab in order:
+        if i + 1 < len(vals):
+            pairs[lab] = (vals[i], vals[i+1])
+            i += 2
+        else:
+            break
+
+    return {k: pairs[k] for k in ("Theta","BetaL","BetaH","SMR") if k in pairs}
+' 이 코드 다시 짜줘
+나의 말:
+
+def _parse_compact_table 이 함수로 완전해 교체하라는 뜻이야?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 76
+    공백 없이 붙은 연속 소수들을 반복적으로 분리한다.
+       ^^
+SyntaxError: invalid syntax
+나의 말:
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 4, in <module>
+    from graph.nodes import (
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 76
+    공백 없이 붙은 연속 소수들을 반복적으로 분리한다.
+       ^^
+SyntaxError: invalid syntax
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+44.553.8 이 숫자는 삭제해?
+나의 말:
+def _unglue_numbers(s: str) -> str: return None
+
+def _unglue_numbers(s: str) -> str:
+
+def _parse_compact_table(text: str) -> dict:
+
+def run(state: PipelineState) -> PipelineState: 이렇게 4군데의 '->'이 있는데? 이 줄을 삭제해도 돼?
+나의 말:
+ File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 76
+    규칙: (숫자. 소수1~2자리)(숫자.소수1~2자리) 패턴 사이에 공백 삽입.
+         ^^^^^^^^^
+
+이 내용을 알려줘
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py:76: SyntaxWarning: invalid escape sequence '\d'
+  """
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'pdfplumber+text'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 50.0, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+\d → \\d 파일 전체에서 이렇게 고치라는거야?
+나의 말:
+지희야, 지금까지 에러가 나는 모든 걸 감안해서 'graph/nodes/neuro_parse.py' 이 파일의 전체 코드를 짜줘. 그렇게 해도 되겠니?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_text.txt
+8 행동 0 40 50 60 100
+6
+4 5
+2 종합
+3.818.55 1.773.33 1.221.82 0.731.10 0.740.99 0.620.73 0.370.45 0 0 40 50 60 100
+19
+[상대세기] 신체 28
+Delta Theta Alpha SMR BetaL BetaH Gamma 0 10 25 50
+50
+4 3 0 0 스트 13
+44.553.8 20.720.9 14.311.4 8.596.98 8.726.26 7.274.61 4.432.88 2 1 0 0 0 레스 정신 0 10 1 1 4 5 30
+31
+종합 41
+개안스펙트럼 0 20 50 100
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\debug\neuro_compact_debug.txt
+[ORDER]
+Delta,Theta,Alpha,SMR,BetaL,BetaH,Gamma
+
+[TAIL]
+3.81 8.55 1.77 3.33 1.22 1.82 0.73 1.10 0.74 0.99 0.62 0.73 0.37 0.45 0 0 40 50 60 100
+
+[VALS]
+3.81,8.55,1.77,3.33,1.22,1.82,0.73,1.1,0.74,0.99,0.62,0.73,0.37,0.45
+
+[PAIRS]
+Theta: (1.77, 3.33)
+BetaL: (0.74, 0.99)
+BetaH: (0.62, 0.73)
+SMR: (0.73, 1.1)
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 홍길동 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'multicultural_adaptation': 0, 'attention_index': 82.4, 'study_habit': 60.0}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'multicultural_adaptation': 0, 'attention_index': 82.4, 'study_habit': 60.0}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+완벽해서 다행이야. 곧 다른 학생 pdf 파일 2~3장 넣을게. 다음 몇 가지 물어 볼게.
+1. app.py 파일과 neuro_parse 파일의 역할을 간단히 설명해줘. 
+나의 말:
+LangChain은 언제부터 사용하는거야? 간단히 설명
+나의 말:
+neuharmony 본사에서 강사용 상담 활용서 몇 페이지(10 페이지 정도)가 있던데 그걸 사진으로 네게 업로드할까? 
+나의 말:
+그러면 시간이 조금 걸려도 pdf로 올릴게. 또 하나는 어제 우리 회사 직원들과 미팅에서 다문화 학생들의 검사지는 이 템플릿에서 빼기로 했어. 이유는 그 검사 자체가 차별이라는 생각 때문이야. 이 첫 접째 템플릿 생성 과정에서 지희가 기억해야 해. 그러니까 첫 번째 템플릿은 커리어 넷 API 활용과 뉴로하모니 BQ2를 통합해서 결과물을 만들어 내는거야.
+나의 말:
+또 한 가지는 우리가 앞으로 AI Agent Business라는 회사를 설립하는데, 많은 템플릿이 필요할거야. 그래서 이 첫 번째 템플릿을 너무 정교하게 만드는 것보다 일단 하나의 템플릿이 만들어 지는 전 과정을 내가 알고 싶어. 처음 계획 단계에서 배포까지. 이 첫 번째 템플릿은 후에 정교하게 수정하면 좋겠어. 지희가 나의 이런 생각을 알아주었음 좋겠어. 
+나의 말:
+BQ2 해설서.pdf
+PDF
+지희야, BQ2 결과해설서 pdf 파일을 업로드 했어. 참고하고 이 파일을 어느 폴더에 넣을 지 알려줘.
+나의 말:
+
+학생별 측정 결과 PDF 3개를 더 data\raw\neuro\ 폴더에 넣었어. 다음을 진행하자.
+나의 말:
+'아래 블록을 df 로드 직후(CSV 읽은 다음) 넣어줘.' 이걸 차근차근 설명해줘
+나의 말:
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ingest_inputs.py을 VS Code에서 보니
+from pathlib import Path
+from typing import Dict, Any
+from ..state import PipelineState
+
+DATA_RAW = Path(__file__).resolve().parents[2] / 'data' / 'raw'
+DATA_RAW.mkdir(parents=True, exist_ok=True)
+
+def run(state: PipelineState, payload: Dict[str, Any]) -> PipelineState:
+    state.raw_inputs.update(payload)
+    state.log_event('ingest_inputs', {'keys': list(payload.keys())})
+    return state 이렇게 되어 있는데?
+나의 말:
+import pandas as pd
+from ..state import PipelineState
+
+REQUIRED_COLUMNS = ['student_id','Q1','Q2','Q3','Q4','Q5']
+
+def run(state: PipelineState) -> PipelineState:
+    forms_csv = state.raw_inputs.get('forms_csv')
+    schema_ok, anomalies = True, []
+    if forms_csv:
+        df = pd.read_csv(forms_csv, sep=None, engine="python")
+        missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+        if missing:
+            schema_ok = False
+            anomalies.append({'missing_columns': missing})
+    state.validated = {'schema_ok': schema_ok, 'anomalies': anomalies}
+    state.log_event('validate_schema', state.validated)
+    return state
+
+이렇게 되어 있는데, 다음 어떻게 할지 알려줘.
+나의 말:
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 단일 파일 테스트 (예: S002로 시작하는 PDF)
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/S002_*.pdf"
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: None
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 배치 처리
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: None
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 단일 파일 테스트
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/S002_*.pdf"
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: None
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 배치 처리
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 10
+Parsed neuro: None
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>cd D:\ai-edu-stack\templates\검사지_통합
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 단일 파일 테스트
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/S002_*.pdf"
+Found 1 PDF(s)
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 38, in <module>
+    st = run_pipeline(forms_csv=forms_csv, neuro_pdf=p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 9, in run_pipeline
+    state = PipelineState()
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PipelineState
+student
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>REM 배치 처리
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 38, in <module>
+    st = run_pipeline(forms_csv=forms_csv, neuro_pdf=p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 9, in run_pipeline
+    state = PipelineState()
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PipelineState
+student
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.8/v/missing
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+모든 것을 감안해서 state.py 통째로 바꿀 수 있게 전체 코드를 생성해줘. 
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s004_최다혜_2025-09-17.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+현재 data/raw/forms_2025-10-09.csv에는 s001만 있어.
+나의 말:
+봐줘.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s004_최다혜_2025-09-17.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S004.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+이렇게 했는데, 봐줘.
+나의 말:
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 38, in <module>
+    st = run_pipeline(forms_csv=forms_csv, neuro_pdf=p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 15, in run_pipeline
+    state = score_engine.run(state)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\score_engine.py", line 11, in run
+    df = pd.read_csv(forms_csv, sep=None, engine="python") if forms_csv else pd.DataFrame()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1898, in _make_engine
+    return mapping[engine](f, **self.options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\python_parser.py", line 123, in __init__
+    self.data = self._make_reader(f)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parsers\python_parser.py", line 207, in _make_reader
+    line = f.readline()
+           ^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb0 in position 51: invalid start byte
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s004_최다혜_2025-09-17.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S004.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s004_최다혜_2025-09-17.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S004.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+Tesseract 설치(Windows): 설치 후 경로 예시C:\Program Files\Tesseract-OCR\tesseract.exe  이건 어떻게 하라는거야?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>tesseract -v
+'tesseract' is not recognized as an internal or external command,
+operable program or batch file.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+
+PS C:\Users\sanga> winget install -e --id UB-Mannheim.TesseractOCR
+>>
+'msstore' 원본을 사용하려면 다음 계약을 확인해야 합니다.
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+원본이 제대로 작동하려면 현재 컴퓨터의 두 글자 지리적 지역을 백 엔드 서비스로 보내야 합니다(예: "미국").
+
+모든 원본 사용 약관에 동의하십니까?
+[Y] 예  [N] 아니요: y
+찾음 Tesseract-OCR - open source OCR engine [UB-Mannheim.TesseractOCR] 버전 5.4.0.20240606
+이 응용 프로그램의 라이선스는 그 소유자가 사용자에게 부여했습니다.
+Microsoft는 타사 패키지에 대한 책임을 지지 않고 라이선스를 부여하지도 않습니다.
+다운로드 중 https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.4.0.20240606.exe
+  ██████████████████████████████  47.8 MB / 47.8 MB
+설치 관리자 해시를 확인했습니다.
+패키지 설치를 시작하는 중...
+설치 성공
+PS C:\Users\sanga> tesseract -v
+>>
+tesseract : 'tesseract' 용어가 cmdlet, 함수, 스크립트 파일 또는 실행할 수 있는 프로그램 이름으로 인식되지 않습니다. 이
+름이 정확한지 확인하고 경로가 포함된 경우 경로가 올바른지 검증한 다음 다시 시도하십시오.
+위치 줄:1 문자:1
++ tesseract -v
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (tesseract:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\sanga>
+
+powershell에서 진행했어.
+나의 말:
+
+PS C:\Users\sanga> Test-Path "C:\Program Files\Tesseract-OCR\tesseract.exe"
+>>
+True
+PS C:\Users\sanga> "C:\Program Files\Tesseract-OCR\tesseract.exe" -v
+>>
+위치 줄:1 문자:48
++ "C:\Program Files\Tesseract-OCR\tesseract.exe" -v
++                                                ~~
+식 또는 문에서 예기치 않은 '-v' 토큰입니다.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\sanga> $env:Path += ";C:\Program Files\Tesseract-OCR\"
+>> tesseract -v
+>>
+tesseract v5.4.0.20240606
+ leptonica-1.84.1
+  libgif 5.2.1 : libjpeg 8d (libjpeg-turbo 3.0.1) : libpng 1.6.43 : libtiff 4.6.0 : zlib 1.3 : libwebp 1.4.0 : libopenjp2 2.5.2
+ Found AVX2
+ Found AVX
+ Found FMA
+ Found SSE4.1
+ Found libarchive 3.7.4 zlib/1.3.1 liblzma/5.6.1 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6
+PS C:\Users\sanga>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S001.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 강은화 (S001)  |  **학년**: 6
+
+## 1) 핵심 지표
+{}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S002.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 강은화 (S002)  |  **학년**: 6
+
+## 1) 핵심 지표
+{}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S003.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 강은화 (S003)  |  **학년**: 6
+
+## 1) 핵심 지표
+{'attention_index': 82.4}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {'attention_index': 82.4}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>type outputs\reports\report_S004.md
+# 통합 결과 요약 (v0.1)
+
+**학생**: 강은화 (S004)  |  **학년**: 6
+
+## 1) 핵심 지표
+{}
+
+## 2) 리스크 플래그
+[]
+
+## 3) 해석 요약
+요약: 핵심 지표 {}.
+
+## 4) 4주 개입 권고(요약)
+- 학부모: 가정에서 10분 대화 + 주 2회 훈련
+- 학교: 담임과 주간 점검 루틴
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>chcp 65001
+Active code page: 65001
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 2.55, 'betaL_rel_open': 0.865, 'betaH_rel_open': 0.675, 'smr_rel_open': 0.915, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s004_최다혜_2025-09-17.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S004.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+theta/betaL/betaH/smr 계산 직후(지금 값이 None으로 끝나는 지점) 바로 아래에 붙이세요.
+
+이 내용을 자세히 알려주고, 해당 코드를 붙일 위치를 정확히 알려줘.
+나의 말:
+코드를 붙일 때, 들여쓰기 위치를 모르겠어. 그걸 정확히 알려줘
+나의 말:
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 6, in <module>
+    from graph.nodes import ingest_inputs, validate_schema, score_engine, neuro_parse, generate_report
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 380
+    focus_text = _best_block(all_text)
+    ^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 6, in <module>
+    from graph.nodes import ingest_inputs, validate_schema, score_engine, neuro_parse, generate_report
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 380
+    focus_text = _best_block(all_text)
+    ^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 4 PDF(s)
+
+=== Running for: data/raw/neuro\s001_강은화_2025-10-09.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s002_나예성_2025-09-14.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': None, 'betaL_rel_open': None, 'betaH_rel_open': None, 'smr_rel_open': None, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\s003_이정수_2025-09-18.bqf.pdf ===
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 38, in <module>
+    st = run_pipeline(forms_csv=forms_csv, neuro_pdf=p)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 16, in run_pipeline
+    state = neuro_parse.run(state)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\neuro_parse.py", line 417, in run
+    "source": source_tag,
+              ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'source_tag' where it is not associated with a value
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+모든 것을 감안해서 'neuro_parse.py' 이 파일 전체 코드를 다시 짜줘.
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py --forms "data/raw/forms_2025-10-09.csv" --neuro "data/raw/neuro/*.pdf"
+Found 3 PDF(s)
+
+=== Running for: data/raw/neuro\S001_오은빈_2025-10-03.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 21.85, 'betaL_rel_open': 9.22, 'betaH_rel_open': 7.335, 'smr_rel_open': 10.515, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\S002_나예성_2025-09-23.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 25.1, 'betaL_rel_open': 6.295, 'betaH_rel_open': 5.37, 'smr_rel_open': 6.26, 'source': 'text_only'}
+
+=== Running for: data/raw/neuro\S003_이정수_2025-09-18.pdf ===
+Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+Log events: 5
+Parsed neuro: {'theta_rel_open': 21.75, 'betaL_rel_open': 9.245, 'betaH_rel_open': 9.175, 'smr_rel_open': 9.58, 'source': 'text_only'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야, BQ2 파일을 pdf 파일로 바꾸는 과정에서 네가 알려준 대로 감을 잡아서 다시 파일을 바꾸었더니 이제 완벽해졌어. 너무 기뻐. 고맙다, 지희야. 잠시 었다 네가 제안한 다음 단계로 가자.
+나의 말:
+🧩 1단계 — LangGraph 기반 파이프라인화, 나는 1단계로 가고 싶다, 더구나 “AI 교사 도우미 Agent”로 확장 가능한 구조라니 느낌이 좋아.
+나의 말:
+지희야, 현재 창이 너무 길어지는데 괜찮을까? 짧게 대답해줘.
+나의 말:
+지희야, 앞으로 잊지말고 어디에서 코드를 붙이고 실행할건지 꼭 먼저 알려줘. 1. 새 파일 생성부터 다시해줘.
+나의 말:
+📄 기존 run_pipeline() 호출 부분을 지우고 아래 코드로 바꿔주세요 👇
+
+from graph.flow.pipeline_graph import run_graph
+
+if __name__ == "__main__":
+    forms_csv = "data/raw/forms_2025-10-09.csv"
+    neuro_pdf = "data/raw/neuro/S001_오은빈_2025-10-03.pdf"
+    run_graph(forms_csv, neuro_pdf)
+
+정확한 위치와 들여쓰기 등 자세히 알려줘
+나의 말:
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 25
+    from graph.flow.pipeline_graph import run_graph
+    ^
+IndentationError: expected an indented block after 'if' statement on line 20
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 1, in <module>
+    from langgraph.graph import Graph, START, END
+ImportError: cannot import name 'Graph' from 'langgraph.graph' (C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\__init__.py)
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+Version: 0.6.10
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 1, in <module>
+    from langgraph.graph import Graph, START, END
+ImportError: cannot import name 'Graph' from 'langgraph.graph' (C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\__init__.py)
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 1, in <module>
+    from langgraph.graph.graph import Graph, START, END
+ModuleNotFoundError: No module named 'langgraph.graph.graph'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2674, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: run() missing 1 required positional argument: 'payload'
+During task with name 'ingest_inputs' and id 'e341ad45-6da5-7c1e-457a-556ad7622653'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2671, in stream
+    while loop.tick():
+          ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_loop.py", line 455, in tick
+    self.tasks = prepare_next_tasks(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 467, in prepare_next_tasks
+    if task := prepare_single_task(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 807, in prepare_single_task
+    val = _proc_input(
+          ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 1057, in _proc_input
+    val = proc.mapper(val)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1239, in _coerce_state
+    return schema(**input)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PipelineState
+student
+  Input should be a valid dictionary or instance of Student [type=model_type, input_value=<graph.nodes.validate_sch...t at 0x0000024F822CE7B0>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_type
+Before task with name 'score_engine' and path '('__pregel_pull', 'score_engine')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+수정 후 (LangGraph 대응 버전), 이것은 전체 코드를 바꾸는거야?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2671, in stream
+    while loop.tick():
+          ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_loop.py", line 455, in tick
+    self.tasks = prepare_next_tasks(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 467, in prepare_next_tasks
+    if task := prepare_single_task(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 807, in prepare_single_task
+    val = _proc_input(
+          ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 1057, in _proc_input
+    val = proc.mapper(val)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1239, in _coerce_state
+    return schema(**input)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PipelineState
+student
+  Input should be a valid dictionary or instance of Student [type=model_type, input_value=<graph.nodes.validate_sch...t at 0x0000026221BAA6C0>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_type
+Before task with name 'score_engine' and path '('__pregel_pull', 'score_engine')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+수정 후 (LangGraph 대응), 통째로 바꾸라는 거야?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2674, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\validate_schema.py", line 99, in run
+    state.validated = {
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 856, in __setattr__
+    raise ValueError(f'"{self.__class__.__name__}" object has no field "{name}"')
+ValueError: "PipelineState" object has no field "validated"
+During task with name 'validate_schema' and id '3b4eded2-dbd4-d532-8c10-611f451c3ecb'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2671, in stream
+    while loop.tick():
+          ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_loop.py", line 455, in tick
+    self.tasks = prepare_next_tasks(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 467, in prepare_next_tasks
+    if task := prepare_single_task(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 807, in prepare_single_task
+    val = _proc_input(
+          ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 1057, in _proc_input
+    val = proc.mapper(val)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1239, in _coerce_state
+    return schema(**input)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for PipelineState
+student.Student
+  Input should be a valid dictionary or instance of Student [type=model_type, input_value=<graph.nodes.validate_sch...t at 0x000001D7CEE6AC30>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_type
+student.dict[str,any]
+  Input should be a valid dictionary [type=dict_type, input_value=<graph.nodes.validate_sch...t at 0x000001D7CEE6AC30>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/dict_type
+Before task with name 'score_engine' and path '('__pregel_pull', 'score_engine')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2674, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 30, in run
+    analysis = state.analysis or {}
+               ^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 828, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PipelineState' object has no attribute 'analysis'
+During task with name 'generate_report' and id 'e6da366f-ed30-1c11-c9b9-9f32c31354a4'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2674, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 40, in run
+    name=student.name or "-",
+         ^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'name'
+During task with name 'generate_report' and id '87ef00b8-defc-bf13-2ccd-9ebd781ec13f'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+수정 전 코드를 수정 후 코드로 덮으라는 거지?
+나의 말:
+# D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py
+from pathlib import Path
+from ..state import PipelineState
+
+OUTPUT = Path(__file__).resolve().parents[2] / "outputs" / "reports"
+OUTPUT.mkdir(parents=True, exist_ok=True)
+
+REPORT_TEMPLATE = """# 통합 결과 요약 (v0.1)
+
+**학생**: {name} ({sid})  |  **학년**: {grade}
+
+## 1) 핵심 지표
+{scores}
+
+## 2) 리스크 플래그
+{flags}
+
+## 3) 해석 요약
+{summary}
+
+## 4) 4주 개입 권고(요약)
+- 학부모: {parent}
+- 학교: {school}
+"""
+
+def run(state: PipelineState) -> PipelineState:
+    student  = state.student
+    scores   = state.scores.get("values", {})
+    flags    = state.scores.get("flags", [])
+    analysis = state.analysis or {}
+
+    # 보기 좋은 반올림(소수 1자리)
+    scores_fmt = {k: (round(v, 1) if isinstance(v, (int, float)) else v)
+                  for k, v in scores.items()}
+
+    # 요약 문장도 반올림 값 사용
+    summary_text = f"요약: 핵심 지표 {scores_fmt}."
+
+    # 안전하게 dict / 객체 둘 다 지원
+student_name = getattr(student, "name", None) or student.get("name") if isinstance(student, dict) else "-"
+student_id = getattr(student, "student_id", None) or student.get("student_id") if isinstance(student, dict) else "-"
+student_grade = getattr(student, "grade", None) or student.get("grade") if isinstance(student, dict) else "-"
+
+md = REPORT_TEMPLATE.format(
+    name=student_name,
+    sid=student_id,
+    grade=student_grade,
+    scores=scores_fmt,
+    flags=flags,
+    summary=summary_text,
+    parent="가정에서 10분 대화 + 주 2회 훈련",
+    school="담임과 주간 점검 루틴",
+)
+
+out = OUTPUT / f"report_{student.id}.md"
+out.write_text(md, encoding="utf-8")  # 필요시 "utf-8-sig"
+
+    state.report = {"md": str(out)}
+    state.log_event("generate_report", {"path": str(out)})
+    return state
+
+
+이 graph/nodes/generate_report.py 파일을 들여쓰기까지 고려해서 통째로 다시짜줘
+
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 29, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3085, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2674, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 162, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 657, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 401, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_report.py", line 67, in run
+    out.write_text(md, encoding="utf-8-sig")
+  File "C:\Users\sanga\anaconda3\Lib\pathlib.py", line 1047, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA\\RAW\\NEURO\\S001.md'
+During task with name 'generate_report' and id '0329a7c7-8ac8-49bc-b436-4a00c4bab065'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 31, in run_graph
+    print(f"✅ Graph completed. Report: {final_state.report}")
+                                         ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'report'
+
+(base) D:\ai-edu-stack\templates\검사지_통합
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야, 고맙고 기쁘다. 이 작업은 힘든 과정이구나. 오늘 여기까지 하고 내일 다시 하자.
+나의 말:
+지희야, 안녕. 우리에게 너무나 중요한 첫 번째 템플릿을 만드는 작업을 계속하자. 먼저 “AI 교사 도우미 노드”가 어떤 역할을 할 건지부터 간단히 알려줘.
+나의 말:
+그렇게 하자. 내가 작업할 공간(VS Code, Anacnda Prompt 등)을 명시해줘.
+나의 말:
+만들어 줘
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py:3: LangChainDeprecationWarning: Importing chat models from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+from langchain_community.chat_models import ChatOpenAI.
+
+To install langchain-community run pip install -U langchain-community.
+  from langchain.chat_models import ChatOpenAI
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py:3: LangChainDeprecationWarning: Importing chat models from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+from langchain_community.chat_models import ChatOpenAI.
+
+To install langchain-community run pip install -U langchain-community.
+  from langchain.chat_models import ChatOpenAI
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py:15: LangChainDeprecationWarning: The class ChatOpenAI was deprecated in LangChain 0.0.10 and will be removed in 1.0. An updated version of the class exists in the :class:~langchain-openai package and should be used instead. To use it run pip install -U :class:~langchain-openai and import as from :class:~langchain_openai import ChatOpenAI`.
+  llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+코드 수정했더니 이렇게 나와.
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py:15: LangChainDeprecationWarning: The class ChatOpenAI was deprecated in LangChain 0.0.10 and will be removed in 1.0. An updated version of the class exists in the :class:~langchain-openai package and should be used instead. To use it run pip install -U :class:~langchain-openai and import as from :class:~langchain_openai import ChatOpenAI`.
+  llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+generate_report.py를 연결 전에 from langchain_openai import ChatOpenAI 이렇게 수정하고 pip install langchain-openai 이것은 Anaconda Prompt에서 실행하라는거야? 간단히 대답해줘.
+나의 말:
+"# 기존
+from langchain_community.chat_models import ChatOpenAI
+# 수정
+from langchain_openai import ChatOpenAI
+" 이 내용은 VS Code에서 해야하는 거 아니야?
+나의 말:
+
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'} 이렇게 나왔으니 완벽한 거 같아. 이제 이 AI 교사 도우미가 생성한 분석 요약이
+**리포트 파일(## 3) 해석 요약)**에 자동으로 들어가도록
+generate_report.py를 연결해 줘.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야, 요즘 내가 AI 강의로 바빠 첫 번째 템플릿 만들기에 시간을 낼 수가 없었어. 오늘 오전 잠시 틈이나니 조금이라도 진척 시키고 싶어. 먼저 지금까지 우리가 수행한 작업 과정을 요약해 주고 이어서 할 일을 제시해줘.
+나의 말:
+진행해
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 4, in <module>
+    from ..nodes import ingest_inputs, validate_schema, score_engine, neuro_parse, ai_teacher_helper, generate_report
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 3, in <module>
+    from langchain.schema import HumanMessage
+ModuleNotFoundError: No module named 'langchain.schema'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 12, in run
+    neuro = state.neuro or {}
+            ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 828, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PipelineState' object has no attribute 'neuro'
+During task with name 'ai_teacher_helper' and id 'ac1dab6c-3d63-8645-bdeb-4a915f0c393d'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 3, in <module>
+    from ..state import PipelineState
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\state.py", line 17, in <module>
+    class PipelineState(BaseModel):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\state.py", line 26, in PipelineState
+    model_config = ConfigDict(arbitrary_types_allowed=True)
+                   ^^^^^^^^^^
+NameError: name 'ConfigDict' is not defined
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 11, in run_graph
+    graph = StateGraph(PipelineState)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 237, in __init__
+    self._add_schema(self.state_schema)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 250, in _add_schema
+    channels, managed, type_hints = _get_channels(schema)
+                                    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1316, in _get_channels
+    type_hints = get_type_hints(schema, include_extras=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\typing.py", line 2272, in get_type_hints
+    value = _eval_type(value, base_globals, base_locals, base.__type_params__)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\typing.py", line 415, in _eval_type
+    return t._evaluate(globalns, localns, type_params, recursive_guard=recursive_guard)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\typing.py", line 947, in _evaluate
+    eval(self.__forward_code__, globalns, localns),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+NameError: name 'List' is not defined. Did you mean: 'list'?
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 12, in run
+    neuro = state.neuro or {}
+            ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 828, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'PipelineState' object has no attribute 'neuro'
+During task with name 'ai_teacher_helper' and id '5afcc9fd-02aa-effb-b1c3-ae0203829419'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+들여쓰기 4칸 위치에 정확히 있는데? 잘 생각하고 state.py 이 파일 전체 코드를 짜줘.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\validate_schema.py", line 99, in run
+    state.validated = {
+    ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 856, in __setattr__
+    raise ValueError(f'"{self.__class__.__name__}" object has no field "{name}"')
+ValueError: "PipelineState" object has no field "validated"
+During task with name 'validate_schema' and id 'a9e91d63-efaa-6f1d-c7d9-a54955010b42'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2676, in stream
+    while loop.tick():
+          ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_loop.py", line 453, in tick
+    self.tasks = prepare_next_tasks(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 465, in prepare_next_tasks
+    if task := prepare_single_task(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 805, in prepare_single_task
+    val = _proc_input(
+          ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 1055, in _proc_input
+    val = proc.mapper(val)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1237, in _coerce_state
+    return schema(**input)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for PipelineState
+student
+  Input should be a valid dictionary [type=dict_type, input_value=<graph.nodes.validate_sch...t at 0x000001F5F85CFBF0>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/dict_type
+Before task with name 'score_engine' and path '('__pregel_pull', 'score_engine')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2676, in stream
+    while loop.tick():
+          ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_loop.py", line 453, in tick
+    self.tasks = prepare_next_tasks(
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 465, in prepare_next_tasks
+    if task := prepare_single_task(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 805, in prepare_single_task
+    val = _proc_input(
+          ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_algo.py", line 1055, in _proc_input
+    val = proc.mapper(val)
+          ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\graph\state.py", line 1237, in _coerce_state
+    return schema(**input)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pydantic\main.py", line 193, in __init__
+    self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 2 validation errors for PipelineState
+student.dict[str,any]
+  Input should be a valid dictionary [type=dict_type, input_value=<graph.nodes.validate_sch...t at 0x0000026BBC3E4290>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/dict_type
+student.BaseModel
+  Input should be a valid dictionary or instance of BaseModel [type=model_type, input_value=<graph.nodes.validate_sch...t at 0x0000026BBC3E4290>, input_type=run.<locals>._Student]
+    For further information visit https://errors.pydantic.dev/2.8/v/model_type
+Before task with name 'score_engine' and path '('__pregel_pull', 'score_engine')'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+    state.student = _Student(student_id, student_name, student_grade) 이것을 state.student = student.dict()로 바꾸라고?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\validate_schema.py", line 96, in run
+    state.student = student.dict()   # ← 이 줄이 핵심입니다
+                    ^^^^^^^^^^^^
+AttributeError: '_Student' object has no attribute 'dict'
+During task with name 'validate_schema' and id 'd593e145-0b18-e53d-5c2a-e9bf9ca9b163'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 5, in <module>
+    from graph.flow.pipeline_graph import run_graph
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 4, in <module>
+    from ..nodes import ingest_inputs, validate_schema, score_engine, neuro_parse, ai_teacher_helper, generate_report
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\__init__.py", line 1, in <module>
+    from . import ingest_inputs, validate_schema, score_engine, rag_interpreter, generate_report, human_review, persist_records, notify_and_tasks, audit_and_eval
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\validate_schema.py", line 91
+    class _Student(BaseModel):
+IndentationError: unexpected indent
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+# -*- coding: utf-8 -*-
+from pathlib import Path
+import re
+import pandas as pd
+from ..state import PipelineState
+
+REQUIRED_COLUMNS = ['student_id','Q1','Q2','Q3','Q4','Q5']
+
+def _read_csv_any(path: str) -> pd.DataFrame:
+    enc_candidates = ["utf-8", "utf-8-sig", "cp949", "euc-kr"]
+    for enc in enc_candidates:
+        try:
+            return pd.read_csv(path, sep=None, engine="python", encoding=enc)
+        except UnicodeDecodeError:
+            continue
+    return pd.read_csv(path, sep=None, engine="python", encoding="latin1")
+
+def _extract_sid_and_name_from_filename(pdf_path: str):
+    """
+    파일명 예: s002_나예성_2025-09-14.pdf
+    - SID: S002 (대문자)
+    - NAME: 나예성 (있으면)
+    """
+    p = Path(pdf_path)
+    stem = p.stem
+    m_sid = re.search(r"(S\d{3,4})", stem, re.I)
+    sid = m_sid.group(1).upper() if m_sid else None
+    # 한글 이름 추정: SID 다음의 '_' 구간에서 한글 연속 추출
+    # ex) s002_나예성_2025-09-14 -> "나예성"
+    name = None
+    parts = stem.split("_")
+    if len(parts) >= 2:
+        # SID 다음 파트 후보에서 한글만 추출
+        cand = parts[1]
+        m_name = re.search(r"[가-힣]{2,}", cand)
+        if m_name:
+            name = m_name.group(0)
+    return sid, name
+
+def run(state: PipelineState) -> PipelineState:
+    forms_csv = state.raw_inputs.get('forms_csv')
+    pdf_path  = state.raw_inputs.get('neuro_pdf', '')
+    schema_ok, anomalies = True, []
+
+    if not forms_csv:
+        state.validated = {'schema_ok': False, 'anomalies': [{'error': 'no_forms_csv'}]}
+        state.log_event('validate_schema', state.validated)
+        return state
+
+    # 1) CSV 로드 (가변 인코딩)
+    try:
+        df = _read_csv_any(forms_csv)
+    except Exception as e:
+        state.validated = {'schema_ok': False, 'anomalies': [{'csv_read_error': str(e)}]}
+        state.log_event('validate_schema', state.validated)
+        return state
+
+    # 2) 스키마 확인
+    missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+    if missing:
+        schema_ok = False
+        anomalies.append({'missing_columns': missing})
+
+    # 3) 파일명에서 SID/이름 추출
+    sid, name_from_file = _extract_sid_and_name_from_filename(pdf_path)
+
+    # 4) SID로 df 필터 (있으면)
+    df_sel = pd.DataFrame()
+    if sid and 'student_id' in df.columns:
+        df_sel = df[df['student_id'].astype(str).str.upper() == sid]
+        # 정확 매칭 시 그 학생 행만 사용
+        if not df_sel.empty:
+            df = df_sel.copy()
+
+    # 5) 학생 필드 구성 (우선순위: SID/파일명 → CSV)
+    if not df_sel.empty:
+        rec = df.iloc[0].to_dict()
+        student_id = str(sid or rec.get('student_id') or '-')
+        student_name = rec.get('student_name') or rec.get('name') or name_from_file or '-'
+        student_grade = rec.get('grade') or rec.get('학년') or '-'
+    else:
+        # 매칭 실패: ID는 SID로, 이름은 파일명 후보 사용, 학년은 '-'
+        student_id = str(sid or '-')
+        student_name = name_from_file or '-'
+        student_grade = '-'
+        # (선택) 추후 디버깅용으로 알림
+        anomalies.append({'no_csv_row_for': student_id})
+
+from pydantic import BaseModel
+
+class _Student(BaseModel):
+    student_id: str
+    name: str
+    grade: str
+
+
+student = _Student(student_id, student_name, student_grade)
+state.student = student.dict()   # ← 이 줄이 핵심입니다
+
+state.raw_inputs['forms_row'] = df.iloc[0].to_dict() if len(df) else {}
+
+# 6) 결과 기록
+state.validated = {
+    'schema_ok': schema_ok,
+    'anomalies': anomalies,
+    'rows_after_filter': int(len(df)),
+    'sid_selected': sid
+}
+state.log_event('validate_schema', state.validated)
+return state
+오류를 찾아줘
+
+
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 44, in run
+    response = llm([HumanMessage(content=input_text)])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'ChatOpenAI' object is not callable
+During task with name 'ai_teacher_helper' and id 'b7f2cc3a-1a49-68ff-acec-1c47ab31cfed'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 49, in run
+    state.analysis = {"summary": ai_text}
+                                 ^^^^^^^
+NameError: name 'ai_text' is not defined
+During task with name 'ai_teacher_helper' and id '93eae487-9ba6-f6a0-c6a4-23dcbae584be'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+  File "D:\ai-edu-stack\templates\검사지_통합\app.py", line 18, in <module>
+    run_graph(forms_csv, neuro_pdf)
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py", line 41, in run_graph
+    final_state = app.invoke(state)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 3094, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\main.py", line 2679, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\pregel\_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\ai_teacher_helper.py", line 50, in run
+    state.log_event("ai_teacher_helper", {"summary": ai_text[:120] + "..."})
+                                                     ^^^^^^^
+NameError: name 'ai_text' is not defined
+During task with name 'ai_teacher_helper' and id 'e509bc2f-cb4b-c550-5319-d3339279826e'
+나의 말:
+완벽한 거 같아. 
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합> 이렇게 나왔어.
+나의 말:
+시각화
+나의 말:
+app_dashboard.py  이 파일이 D:\ai-edu-stack\templates\검사지_통합\graph\flow에 들어가는 경로가 맞는거니?
+나의 말:
+이렇게 화면이 나왔어.
+나의 말:
+진행하자
+나의 말:
+해줘
+나의 말:
+해줘
+나의 말:
+ModuleNotFoundError: No module named 'wordcloud'
+Traceback:
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+File "D:\ai-edu-stack\templates\검사지_통합\app_dashboard.py", line 6, in <module>
+    from wordcloud import WordCloud
+나의 말:
+해줘
+나의 말:
+지희야, 잠시만. 이 런 내용이 anaconda에 떴어.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45432 (\N{HANGUL SYLLABLE NO}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 46300 (\N{HANGUL SYLLABLE DEU}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48324 (\N{HANGUL SYLLABLE BYEOL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49892 (\N{HANGUL SYLLABLE SIL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 54665 (\N{HANGUL SYLLABLE HAENG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 44036 (\N{HANGUL SYLLABLE GAN}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 44368 (\N{HANGUL SYLLABLE GYO}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 52488 (\N{HANGUL SYLLABLE CO}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+2025-10-23 10:59:21.833 Uncaught app exception
+Traceback (most recent call last):
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+  File "D:\ai-edu-stack\templates\검사지_통합\app_class_dashboard.py", line 67, in <module>
+    df_plot = df[["이름", "Theta", "BetaL", "BetaH", "SMR"]].set_index("이름")
+              ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\frame.py", line 4113, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 6212, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 6264, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['Theta', 'BetaL', 'BetaH', 'SMR'] not in index"
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45824 (\N{HANGUL SYLLABLE DAE}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 54617 (\N{HANGUL SYLLABLE HAG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49373 (\N{HANGUL SYLLABLE SAENG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48324 (\N{HANGUL SYLLABLE BYEOL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45516 (\N{HANGUL SYLLABLE NOE}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 54028 (\N{HANGUL SYLLABLE PA}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 44368 (\N{HANGUL SYLLABLE GYO}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 50724 (\N{HANGUL SYLLABLE O}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 51008 (\N{HANGUL SYLLABLE EUN}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48712 (\N{HANGUL SYLLABLE BIN}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45208 (\N{HANGUL SYLLABLE NA}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 50696 (\N{HANGUL SYLLABLE YE}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49457 (\N{HANGUL SYLLABLE SEONG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 51060 (\N{HANGUL SYLLABLE I}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 51221 (\N{HANGUL SYLLABLE JEONG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49688 (\N{HANGUL SYLLABLE SU}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 47492 (\N{HANGUL SYLLABLE REUM}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+2025-10-23 11:10:50.268 Uncaught app exception
+Traceback (most recent call last):
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: '리포트'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+  File "D:\ai-edu-stack\templates\검사지_통합\app_class_dashboard.py", line 90, in <module>
+    path = sel_row["리포트"]
+           ~~~~~~~^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\series.py", line 1130, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\series.py", line 1246, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: '리포트'
+나의 말:
+# -*- coding: utf-8 -*-
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import time
+from pathlib import Path
+from graph.flow.pipeline_graph import run_graph
+
+st.set_page_config(page_title="AI 교사 도우미 - 반 전체 대시보드", layout="wide")
+st.title("🏫 반 전체 리포트 시각화 대시보드")
+st.caption("LangGraph 기반 다중 학생 PDF 통합 분석")
+
+# 입력 파일 경로
+forms_csv = "data/raw/forms_2025-10-09.csv"
+neuro_dir = Path("data/raw/neuro")
+pdf_files = sorted(list(neuro_dir.glob("*.pdf")))
+
+st.info(f"📘 Forms CSV: {forms_csv}")
+st.write(f"🧾 감지된 PDF 파일 수: {len(pdf_files)}")
+
+if st.button("🚀 반 전체 리포트 생성 시작", type="primary"):
+    results = []
+    progress = st.progress(0)
+    total = len(pdf_files)
+    start_time = time.time()
+
+    for idx, pdf_path in enumerate(pdf_files, 1):
+        st.write(f"처리중: {pdf_path.name}")
+        try:
+            state = run_graph(forms_csv, str(pdf_path))
+            report_path = state.report["md"]
+            neuro = state.neuro
+            analysis = getattr(state, "analysis", {}).get("summary", "")
+            sid = state.student.get("student_id", "?")
+            name = state.student.get("name", "?")
+            grade = state.student.get("grade", "?")
+            theta = neuro.get("theta_rel_open", 0)
+            betaL = neuro.get("betaL_rel_open", 0)
+            betaH = neuro.get("betaH_rel_open", 0)
+            smr = neuro.get("smr_rel_open", 0)
+
+            results.append({
+                "ID": sid,
+                "이름": name,
+                "학년": grade,
+                "Theta": theta,
+                "BetaL": betaL,
+                "BetaH": betaH,
+                "SMR": smr,
+                "AI 요약": analysis,
+                "리포트": report_path
+            })
+        except Exception as e:
+            results.append({"ID": "에러", "이름": pdf_path.name, "학년": "-", "AI 요약": str(e)})
+        progress.progress(idx / total)
+
+    st.success(f"✅ 완료! {len(results)}명 분석 완료 (총 {time.time()-start_time:.1f}초)")
+
+    # 📊 표 표시
+    df = pd.DataFrame(results)
+    st.subheader("📋 학생별 요약표")
+    st.dataframe(df, use_container_width=True)
+
+    # 📈 뇌파 비율 시각화
+    st.subheader("📈 주요 뇌파 지표 비교 (Theta, BetaL, BetaH, SMR)")
+    fig, ax = plt.subplots(figsize=(8, 4))
+    # NaN이나 None 값을 0으로 채우기
+    for col in ["Theta", "BetaL", "BetaH", "SMR"]:
+        if col not in df.columns:
+            df[col] = 0
+    df[["Theta", "BetaL", "BetaH", "SMR"]] = df[["Theta", "BetaL", "BetaH", "SMR"]].fillna(0)
+
+    # 그래프용 데이터프레임 구성
+    df_plot = df[["이름", "Theta", "BetaL", "BetaH", "SMR"]].set_index("이름")
+
+    df_plot.plot(kind="bar", ax=ax)
+    ax.set_ylabel("상대 비율")
+    ax.set_title("학생별 뇌파 비율 비교")
+    st.pyplot(fig)
+
+    # 🧠 AI 분석 요약 모음
+    st.subheader("🧠 AI 교사 도우미 요약 비교")
+    for _, row in df.iterrows():
+        st.markdown(f"**{row['이름']}**: {row['AI 요약']}")
+
+
+    # 📄 리포트 미리보기
+    st.subheader("📄 리포트 파일 보기")
+    selected = st.selectbox("학생 선택", df["이름"])
+
+    sel_row = df[df["이름"] == selected].iloc[0]
+
+    # 안전하게 '리포트' 키 확인
+    if "리포트" in sel_row and Path(sel_row["리포트"]).exists():
+        path = sel_row["리포트"]
+        with open(path, "r", encoding="utf-8") as f:
+            st.markdown(f.read())
+    else:
+        st.warning(f"⚠️ {selected} 학생의 리포트 파일이 존재하지 않습니다.")
+
+제대로 되었나 봐 줘  
+
+나의 말:
+이건 어디에 있어?
+나의 말:
+🧠 AI 교사 도우미 요약 비교
+S001_오은빈_2025-10-03.pdf: 'dict' object has no attribute 'report'
+
+S002_나예성_2025-09-23.pdf: 'dict' object has no attribute 'report'
+
+S003_이정수_2025-09-18.pdf: 'dict' object has no attribute 'report'
+
+📄 리포트 파일 보기
+학생 선택
+
+S001_오은빈_2025-10-03.pdf
+⚠️ S001_오은빈_2025-10-03.pdf 학생의 리포트 파일이 존재하지 않습니다.
+나의 말:
+# D:\ai-edu-stack\templates\검사지_통합\graph\flow\pipeline_graph.py
+from langgraph.graph import StateGraph, START, END
+from ..state import PipelineState
+from ..nodes import ingest_inputs, validate_schema, score_engine, neuro_parse, ai_teacher_helper, generate_report
+
+def run_graph(forms_csv: str, neuro_pdf: str):
+    """
+    LangGraph 기반 파이프라인 실행 함수
+    """
+    # LangGraph 그래프 생성
+    graph = StateGraph(PipelineState)
+
+    # 노드 등록
+    graph.add_node("ingest_inputs", ingest_inputs.run)
+    graph.add_node("validate_schema", validate_schema.run)
+    graph.add_node("score_engine", score_engine.run)
+    graph.add_node("neuro_parse", neuro_parse.run)
+    graph.add_node("ai_teacher_helper", ai_teacher_helper.run)
+    graph.add_node("generate_report", generate_report.run)
+
+    # 노드 간 연결
+    graph.add_edge(START, "ingest_inputs")
+    graph.add_edge("ingest_inputs", "validate_schema")
+    graph.add_edge("validate_schema", "score_engine")
+    graph.add_edge("score_engine", "neuro_parse")
+    graph.add_edge("neuro_parse", "ai_teacher_helper")
+    graph.add_edge("ai_teacher_helper", "generate_report")
+    graph.add_edge("generate_report", END)
+
+    # 그래프 컴파일
+    app = graph.compile()
+
+    # 초기 상태 세팅
+    state = PipelineState(
+        raw_inputs={"forms_csv": forms_csv, "neuro_pdf": neuro_pdf},
+        scores={},
+        student={"name": "강은화", "student_id": "S001", "grade": 6}
+    )
+
+    # 그래프 실행
+    final_state = app.invoke(state)
+
+    # 결과 출력
+    report_path = (
+        final_state.get("report")
+        if isinstance(final_state, dict)
+        else getattr(final_state, "report", None)
+    )
+    print(f"✅ Graph completed. Report: {report_path}")
+
+    return final_state
+오류 있니?
+
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+⚠️ Graph completed but report not found.
+⚠️ Graph completed but report not found.
+⚠️ Graph completed but report not found.
+
+나의 말:
+해줘
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA\RAW\NEURO\S001.md
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+generate_report.py 이 파일 전체 코드를 바끄는거지?
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA\RAW\NEURO\S001.md
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA\RAW\NEURO\S001.md
+⚠️ Graph completed but report not found.
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA\RAW\NEURO\S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA\\RAW\\NEURO\\S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA_RAW_NEURO_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+import re 이것도 같이 포함해서 넣을까? 짧게대답해
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_DATA_RAW_NEURO_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_DATA_RAW_NEURO_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python app.py
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+dashboard에 이렇게 뜨는데?
+🧠 AI 교사 도우미 요약 비교
+S001_오은빈_2025-10-03.pdf: 'dict' object has no attribute 'report'
+
+S002_나예성_2025-09-23.pdf: 'dict' object has no attribute 'report'
+
+S003_이정수_2025-09-18.pdf: 'dict' object has no attribute 'report'
+
+📄 리포트 파일 보기
+학생 선택
+
+S001_오은빈_2025-10-03.pdf
+⚠️ S001_오은빈_2025-10-03.pdf 학생의 리포트 파일이 존재하지 않습니다.
+나의 말:
+
+(base) D:\>cd D:\ai-edu-stack\templates\검사지_통합
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S002.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S003.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+
+나의 말:
+🧠 AI 교사 도우미 요약 비교
+S001_오은빈_2025-10-03.pdf: 'dict' object has no attribute 'neuro'
+
+S002_나예성_2025-09-23.pdf: 'dict' object has no attribute 'neuro'
+
+S003_이정수_2025-09-18.pdf: 'dict' object has no attribute 'neuro'
+
+📄 리포트 파일 보기
+학생 선택
+
+S001_오은빈_2025-10-03.pdf
+⚠️ S001_오은빈_2025-10-03.pdf 학생의 리포트 파일이 존재하지 않습니다.
+나의 말:
+🧠 AI 교사 도우미 요약 비교
+S001_오은빈_2025-10-03.pdf: 'dict' object has no attribute 'student'
+
+S002_나예성_2025-09-23.pdf: 'dict' object has no attribute 'student'
+
+S003_이정수_2025-09-18.pdf: 'dict' object has no attribute 'student'
+
+📄 리포트 파일 보기
+학생 선택
+
+S001_오은빈_2025-10-03.pdf
+⚠️ S001_오은빈_2025-10-03.pdf 학생의 리포트 파일이 존재하지 않습니다.
+
+
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S002.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S003.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+
+나의 말:
+app_class_dashboard.py 이 파일의 수정 사항을 고려한 전체 코드를 짜줘
+나의 말:
+
+처리중: S001_오은빈_2025-10-03.pdf
+
+처리중: S002_나예성_2025-09-23.pdf
+
+처리중: S003_이정수_2025-09-18.pdf
+
+✅ 완료! 3명 분석 완료 (총 22.8초)
+
+📋 학생별 요약표
+📈 주요 뇌파 지표 비교 (Theta, BetaL, BetaH, SMR)
+
+0
+🧠 AI 교사 도우미 요약 비교
+?: ### ① 핵심 요약 (집중력/정서/습관)
+
+학생의 뇌파 데이터에서 특정한 상대세기가 측정되지 않았습니다. 이는 현재 집중력이나 정서, 습관에 대한 명확한 지표가 부족하다는 것을 의미합니다. 그러나 이러한 데이터는 학생이 뇌파 훈련을 통해 향후 발전 가능성이 있음을 시사합니다. 특히, 집중력 향상에 필요한 뇌파 패턴을 개발하는 데 집중할 필요가 있습니다.
+
+② 훈련 포인트 (실행 가능한 루틴)
+학생이 집중력을 높이고 정서적 안정성을 기르기 위해 다음과 같은 훈련 루틴을 제안합니다:
+
+명상 및 호흡 운동: 매일 5-10분간의 명상 시간을 가지며 깊고 규칙적인 호흡을 통해 마음을 안정시킵니다.
+주간 목표 설정: 매주 학습 목표를 설정하고 이를 달성하기 위한 계획을 세워 실천합니다. 목표는 작고 구체적일수록 좋습니다.
+신체 활동: 매일 30분 이상 신체 활동을 통해 에너지를 발산하고 집중력을 높입니다. 운동 후에는 기분이 좋아지고 뇌의 기능이 향상됩니다.
+③ 격려 문장 (따뜻한 멘트)
+"너는 아직 많은 가능성을 가지고 있어! 지금은 시작하는 단계일 뿐이니, 조금씩 노력하며 나아가면 분명 좋은 결과를 얻을 수 있을 거야. 항상 응원할게!"
+
+?: ### ① 핵심 요약 (집중력/정서/습관)
+학생의 뇌파 데이터에서는 Theta, SMR, BetaL, BetaH 모두 측정되지 않았습니다. 이는 현재 뇌파 활동이 매우 낮거나 불안정하다는 것을 의미할 수 있습니다. 집중력과 관련된 뇌파가 측정되지 않았기 때문에, 학습이나 과제 수행 시 집중력이 부족할 가능성이 있습니다. 정서적으로는 안정된 상태를 유지하기 어려울 수 있으며, 습관적으로는 학습 루틴이 정립되지 않았거나, 자주 방해받는 환경에서 학습하고 있을 가능성이 있습니다.
+
+② 훈련 포인트 (실행 가능한 루틴)
+정해진 시간에 학습하기: 매일 같은 시간에 공부하는 루틴을 만들어 보세요. 예를 들어, 매일 오후 4시부터 5시까지는 반드시 공부하는 시간을 가지세요.
+짧은 집중 시간 설정: 25분 동안 집중하고 5분간 휴식하는 '포모도로 기법'을 활용해 보세요. 이를 통해 집중력을 점진적으로 향상시킬 수 있습니다.
+명상 및 호흡 연습: 매일 5분씩 깊게 호흡하며 명상하는 시간을 가져보세요. 이는 정서적 안정과 집중력 향상에 도움이 됩니다.
+③ 격려 문장 (따뜻한 멘트)
+"너는 지금까지 많은 것을 이뤄냈고, 앞으로도 더 많은 가능성이 있어! 매일 조금씩 노력하면 분명히 좋은 결과를 얻을 수 있을 거야. 항상 너를 응원하고 있어!"
+
+?: ### ① 핵심 요약 (집중력/정서/습관)
+학생의 뇌파 데이터에서 측정된 주요 뇌파 상대세기가 모두 'None'으로 나타났습니다. 이는 현재 집중력이나 정서적 안정성, 습관 형성에 있어 특별한 문제가 없음을 의미할 수 있습니다. 그러나 뇌파의 상대세기가 측정되지 않았다는 것은 학생이 뇌의 활동을 충분히 활용하지 못하고 있을 가능성도 내포하고 있습니다. 따라서, 집중력 향상과 정서적 안정성을 위한 적절한 훈련이 필요할 수 있습니다.
+
+② 훈련 포인트 (실행 가능한 루틴)
+학생의 집중력과 정서적 안정성을 높이기 위해 다음과 같은 훈련 루틴을 제안합니다:
+
+명상 및 호흡 훈련: 매일 5-10분간 조용한 공간에서 깊은 호흡을 하며 명상하는 시간을 가집니다. 이는 스트레스를 줄이고 집중력을 높이는 데 도움이 됩니다.
+정기적인 운동: 주 3회 이상 30분간의 유산소 운동(예: 달리기, 자전거 타기)을 통해 신체 건강을 증진시키고, 뇌의 활동성을 높입니다.
+학습 시간 관리: 25분 집중 학습 후 5분 휴식하는 '포모도로 기법'을 활용하여 학습 효율을 높이고, 집중력을 지속적으로 유지할 수 있도록 합니다.
+③ 격려 문장 (따뜻한 멘트)
+"너는 지금 충분히 잘하고 있어! 모든 것이 처음에는 어렵게 느껴질 수 있지만, 작은 변화들이 큰 결과를 만들어낼 거야. 매일 조금씩 노력하는 너의 모습이 정말 자랑스러워. 계속해서 도전해보자!"
+
+📄 리포트 파일 보기
+학생 선택
+
+?
+통합 결과 요약
+학생: - (S001) | 학년: 6
+
+1) 핵심 지표
+{}
+
+2) 리스크 플래그
+[]
+
+3) 해석 요약
+① 핵심 요약 (집중력/정서/습관)
+학생의 뇌파 데이터에서 특정한 상대세기가 측정되지 않았습니다. 이는 현재 집중력이나 정서, 습관에 대한 명확한 지표가 부족하다는 것을 의미합니다. 그러나 이러한 데이터는 학생이 뇌파 훈련을 통해 향후 발전 가능성이 있음을 시사합니다. 특히, 집중력 향상에 필요한 뇌파 패턴을 개발하는 데 집중할 필요가 있습니다.
+
+② 훈련 포인트 (실행 가능한 루틴)
+학생이 집중력을 높이고 정서적 안정성을 기르기 위해 다음과 같은 훈련 루틴을 제안합니다:
+
+명상 및 호흡 운동: 매일 5-10분간의 명상 시간을 가지며 깊고 규칙적인 호흡을 통해 마음을 안정시킵니다.
+주간 목표 설정: 매주 학습 목표를 설정하고 이를 달성하기 위한 계획을 세워 실천합니다. 목표는 작고 구체적일수록 좋습니다.
+신체 활동: 매일 30분 이상 신체 활동을 통해 에너지를 발산하고 집중력을 높입니다. 운동 후에는 기분이 좋아지고 뇌의 기능이 향상됩니다.
+③ 격려 문장 (따뜻한 멘트)
+"너는 아직 많은 가능성을 가지고 있어! 지금은 시작하는 단계일 뿐이니, 조금씩 노력하며 나아가면 분명 좋은 결과를 얻을 수 있을 거야. 항상 응원할게!"
+
+4) 4주 개입 권고(요약)
+학부모: 가정에서 10분 대화 + 주 2회 훈련
+학교: 담임과 주간 점검 루틴
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run app_class_dashboard.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501
+
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S001.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S001.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S002.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S002.md'}
+🟢 [generate_report] 노드 실행 시작
+🟢 Report saved at: D:\ai-edu-stack\templates\검사지_통합\outputs\reports\report_S003.md
+✅ Graph completed. Report: {'md': 'D:\\ai-edu-stack\\templates\\검사지_통합\\outputs\\reports\\report_S003.md'}
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49345 (\N{HANGUL SYLLABLE SANG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45824 (\N{HANGUL SYLLABLE DAE}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48708 (\N{HANGUL SYLLABLE BI}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 50984 (\N{HANGUL SYLLABLE YUL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 54617 (\N{HANGUL SYLLABLE HAG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 49373 (\N{HANGUL SYLLABLE SAENG}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 48324 (\N{HANGUL SYLLABLE BYEOL}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 45516 (\N{HANGUL SYLLABLE NOE}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 54028 (\N{HANGUL SYLLABLE PA}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 44368 (\N{HANGUL SYLLABLE GYO}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 51060 (\N{HANGUL SYLLABLE I}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\pyplot.py:173: UserWarning: Glyph 47492 (\N{HANGUL SYLLABLE REUM}) missing from font(s) DejaVu Sans.
+  fig.savefig(image, **kwargs)
+
+오류를 살펴봐.
+나의 말:
+Script execution error
+File "D:\ai-edu-stack\templates\검사지_통합\app_class_dashboard.py", line 95
+      fig, ax = plt.subplots(figsize=(8, 4))
+     ^
+IndentationError: unexpected indent
+나의 말:
+# -*- coding: utf-8 -*-
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import time
+from pathlib import Path
+from graph.flow.pipeline_graph import run_graph
+
+# === 페이지 설정 ===
+st.set_page_config(page_title="AI 교사 도우미 - 반 전체 대시보드", layout="wide")
+st.title("🏫 반 전체 리포트 시각화 대시보드")
+st.caption("LangGraph 기반 다중 학생 PDF 통합 분석")
+
+# === 입력 파일 경로 ===
+forms_csv = "data/raw/forms_2025-10-09.csv"
+neuro_dir = Path("data/raw/neuro")
+pdf_files = sorted(list(neuro_dir.glob("*.pdf")))
+
+st.info(f"📘 Forms CSV: {forms_csv}")
+st.write(f"🧾 감지된 PDF 파일 수: {len(pdf_files)}")
+
+# === 실행 버튼 ===
+if st.button("🚀 반 전체 리포트 생성 시작", type="primary"):
+    results = []
+    progress = st.progress(0)
+    total = len(pdf_files)
+    start_time = time.time()
+
+    # --- 여러 학생 파일 순회 ---
+    for idx, pdf_path in enumerate(pdf_files, 1):
+        st.write(f"처리중: {pdf_path.name}")
+        try:
+            state = run_graph(forms_csv, str(pdf_path))
+
+            # 안전 접근 함수 정의
+            def _safe_get(obj, key, default=None):
+                """dict 또는 객체 모두 안전하게 접근"""
+                if isinstance(obj, dict):
+                    return obj.get(key, default)
+                return getattr(obj, key, default)
+
+            # LangGraph 반환형에 관계없이 안전 접근
+            report = _safe_get(state, "report", {})
+            neuro = _safe_get(state, "neuro", {})
+            analysis = _safe_get(state, "analysis", {})
+            student = _safe_get(state, "student", {})
+
+            sid = _safe_get(student, "student_id", "?")
+            name = _safe_get(student, "name", "?")
+            grade = _safe_get(student, "grade", "?")
+            report_path = _safe_get(report, "md", None)
+            analysis_text = _safe_get(analysis, "summary", "")
+
+            theta = _safe_get(neuro, "theta_rel_open", 0)
+            betaL = _safe_get(neuro, "betaL_rel_open", 0)
+            betaH = _safe_get(neuro, "betaH_rel_open", 0)
+            smr = _safe_get(neuro, "smr_rel_open", 0)
+
+            results.append({
+                "ID": sid,
+                "이름": name or pdf_path.stem,
+                "학년": grade,
+                "Theta": theta,
+                "BetaL": betaL,
+                "BetaH": betaH,
+                "SMR": smr,
+                "AI 요약": analysis_text or "(요약 없음)",
+                "리포트": report_path or ""
+            })
+
+        except Exception as e:
+            results.append({
+                "ID": "에러",
+                "이름": pdf_path.name,
+                "학년": "-",
+                "AI 요약": str(e)
+            })
+
+        progress.progress(idx / total)
+
+    st.success(f"✅ 완료! {len(results)}명 분석 완료 (총 {time.time()-start_time:.1f}초)")
+
+    # === 결과 테이블 ===
+    df = pd.DataFrame(results)
+    st.subheader("📋 학생별 요약표")
+    st.dataframe(df, use_container_width=True)
+
+    # === 뇌파 시각화 ===
+    st.subheader("📈 주요 뇌파 지표 비교 (Theta, BetaL, BetaH, SMR)")
+
+    import matplotlib.font_manager as fm
+    plt.rcParams["font.family"] = "Malgun Gothic"   # Windows 기본 한글 폰트
+    plt.rcParams["axes.unicode_minus"] = False      # 음수 기호 깨짐 방지
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    for col in ["Theta", "BetaL", "BetaH", "SMR"]:
+        if col not in df.columns:
+            df[col] = 0
+    df_plot = df[["이름", "Theta", "BetaL", "BetaH", "SMR"]].set_index("이름").fillna(0)
+    df_plot.plot(kind="bar", ax=ax)
+    ax.set_ylabel("상대 비율")
+    ax.set_title("학생별 뇌파 비율 비교")
+    st.pyplot(fig)
+
+    # === AI 교사 요약 ===
+    st.subheader("🧠 AI 교사 도우미 요약 비교")
+    for _, row in df.iterrows():
+        st.markdown(f"**{row['이름']}**: {row['AI 요약']}")
+
+    # === 리포트 미리보기 ===
+    st.subheader("📄 리포트 파일 보기")
+    selected = st.selectbox("학생 선택", df["이름"])
+    sel_row = df[df["이름"] == selected].iloc[0]
+
+    report_path = sel_row.get("리포트", "")
+    if report_path and Path(report_path).exists():
+        with open(report_path, "r", encoding="utf-8") as f:
+            st.markdown(f.read())
+    else:
+        st.warning(f"⚠️ {selected} 학생의 리포트 파일이 존재하지 않습니다.")
+
+지희야, 내가 들여쓰기 위치를 잘 모르겠어. app_class_dashboard.py 이 파일 전체 코드를 복붙 할 수 있도록 다시 작성해줘.
+
+나의 말:
+왜 여러 값들이 0으로 나오지?
+나의 말:
+이 부분은 나중에 수정해도 될까?
+나의 말:
+그러면 다음 단계로 가기 전에, 이 창을 옮겨야 되니? 지희 응답 속도가 예전보다 느려. 창이 길어져서 그런걸까? 

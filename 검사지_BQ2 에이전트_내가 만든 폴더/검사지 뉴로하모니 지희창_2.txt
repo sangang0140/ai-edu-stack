@@ -1,0 +1,489 @@
+지희야, 우리 ‘검사지_통합 템플릿’ 다음 단계 계속하자.
+이전 대화는 D:\ai-edu-stack\templates\검사지_통합 기준이야. 그리고 지난 창을 복사해서 올렸어. 이어갈 수 있겠니? 
+나의 말:
+이것 먼저 확인할게. 우리 사원이 학생의 BQ2 결과 pdf 파일을 입력을 어떻게 하는 건지를 알려 줘.
+나의 말:
+만들어 줘
+나의 말:
+깔끔한 흰 배경 + 파란 포인트 (문서형)
+나의 말:
+넣어줘
+나의 말:
+NotoSansKR-Light.ttf
+파일
+NotoSansKR-Medium.ttf
+파일
+NotoSansKR-Regular.ttf
+파일
+NotoSansKR-SemiBold.ttf
+파일
+NotoSansKR-Thin.ttf
+파일
+NotoSansKR-Black.ttf
+파일
+NotoSansKR-Bold.ttf
+파일
+NotoSansKR-ExtraBold.ttf
+파일
+NotoSansKR-ExtraLight.ttf
+파일
+넣어줘
+나의 말:
+1️⃣ 데이터 파이프라인 완성 단계 — 각 노드의 입력·출력 데이터 흐름 구체화2️⃣ LangGraph 노드 정의 작성 — score_engine.yaml 기반 그래프 노드 스켈레톤3️⃣ Streamlit 시각화 개선 — “0으로 나오는 값” 문제 원인 분석 및 수정4️⃣ 자동 리포트 생성(PDF/Canva) — 학생별 보고서 생성 루틴5️⃣ 전체 템플릿 구조 폴더화 — /data, /graph, /report, /ui 등 구조 정리
+
+이들 중 1번을 먼저 가자.
+나의 말:
+우리가 BQ2에서 받을 수 있는 결과는 내가 이미 네게 제출해서 raw 파일에 저장한 pdf 파일 뿐이야.
+나의 말:
+진행해 줘
+나의 말:
+일단 콘솔에서 확인하는 개발자 전용 버전으로 가자.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\extract_bq2_preview.py
+python: can't open file 'D:\\ai-edu-stack\\templates\\검사지_통합\\graph\\extract_bq2_preview.py': [Errno 2] No such file or directory
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+graph 폴더에 이렇게 있어.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\extract_bq2_preview.py
+
+📘 샘플 파일: S001_오은빈_2025-10-03.pdf
+
+🧠 추출된 주요 지표 항목:
+metric value
+    BQ     2
+          11
+        33.4
+        12.5
+        6.51
+        4.23
+        3.39
+        2.38
+        1.75
+        55.7
+        20.8
+        10.8
+        7.06
+        5.65
+        3.98
+        2.93
+        24.9
+        12.4
+        7.32
+        5.05
+        4.30
+        3.33
+        2.52
+        45.4
+        22.6
+        13.3
+        9.23
+        7.84
+        6.08
+        4.60
+           1
+          28
+           2
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+extract_bq2_preview.py 코드 전체를 바꾸라고? 간단히 대답
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\extract_bq2_preview.py
+
+📘 샘플 파일: S001_오은빈_2025-10-03.pdf
+
+🧠 S001_오은빈_2025-10-03.pdf에서 감지된 주요 지표:
+   metric       value
+       BQ           2
+       체중          35
+     생년월일 2013.05.22.
+      측정일  2025.09.17
+절대세기 원시뇌파       114.2
+절대세기 원시뇌파        75.5
+       좌뇌           8
+       Hz        9.25
+       우뇌          10
+       Hz        7.00
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+raw 폴더에 pdf파일이 3개 있으니 한꺼번에 인식하는 버전(batch_extract)으로 바로 이어가자
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\batch_extract_bq2_metrics.py
+📘 처리 중: S001_오은빈_2025-10-03.pdf
+📘 처리 중: S002_나예성_2025-09-23.pdf
+📘 처리 중: S003_이정수_2025-09-18.pdf
+
+✅ 모든 PDF 분석 완료!
+총 파일 수: 3개
+총 추출 행 수: 32
+저장 위치: data\processed\neuro_df.parquet
+
+📊 미리보기:
+   metric       value student_name               file_name
+       BQ           2          오은빈 S001_오은빈_2025-10-03.pdf
+       체중          35          오은빈 S001_오은빈_2025-10-03.pdf
+     생년월일 2013.05.22.          오은빈 S001_오은빈_2025-10-03.pdf
+      측정일  2025.09.17          오은빈 S001_오은빈_2025-10-03.pdf
+절대세기 원시뇌파       114.2          오은빈 S001_오은빈_2025-10-03.pdf
+절대세기 원시뇌파        75.5          오은빈 S001_오은빈_2025-10-03.pdf
+       좌뇌           8          오은빈 S001_오은빈_2025-10-03.pdf
+       Hz        9.25          오은빈 S001_오은빈_2025-10-03.pdf
+       우뇌          10          오은빈 S001_오은빈_2025-10-03.pdf
+       Hz        7.00          오은빈 S001_오은빈_2025-10-03.pdf
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+neuro_df.csv를 한 번 직접 열어보고 컬럼 구조를 검토해보자
+나의 말:
+metric	value	student_name	file_name
+BQ	2	오은빈	S001_오은빈_2025-10-03.pdf
+체중	35	오은빈	S001_오은빈_2025-10-03.pdf
+생년월일	2013.05.22.	오은빈	S001_오은빈_2025-10-03.pdf
+측정일	2025.09.17	오은빈	S001_오은빈_2025-10-03.pdf
+절대세기 원시뇌파	114.2	오은빈	S001_오은빈_2025-10-03.pdf
+절대세기 원시뇌파	75.5	오은빈	S001_오은빈_2025-10-03.pdf
+좌뇌	8	오은빈	S001_오은빈_2025-10-03.pdf
+Hz	9.25	오은빈	S001_오은빈_2025-10-03.pdf
+우뇌	10	오은빈	S001_오은빈_2025-10-03.pdf
+Hz	7	오은빈	S001_오은빈_2025-10-03.pdf
+BQ	2	나예성	S002_나예성_2025-09-23.pdf
+나의 말:
+전체 주요 항목이 맞아
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\normalize_metrics.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\normalize_metrics.py", line 56, in <module>
+    normalize_metrics()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\normalize_metrics.py", line 15, in normalize_metrics
+    with open(yaml_path, "r", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'graph/metric_map.yaml'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+metric_map.yaml, 이 파일은 내가 직접 메모장에서 만들어 녛으면 되는거야? 아니면 VScode? 간단히 대답해줘
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\normalize_metrics.py
+📄 원본 데이터 로드 완료: 32행
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\normalize_metrics.py", line 56, in <module>
+    normalize_metrics()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\normalize_metrics.py", line 46, in normalize_metrics
+    df.to_parquet(output_path, index=False)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\core\frame.py", line 3118, in to_parquet
+    return to_parquet(
+           ^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parquet.py", line 482, in to_parquet
+    impl.write(
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\parquet.py", line 191, in write
+    table = self.api.Table.from_pandas(df, **from_pandas_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow\\table.pxi", line 4525, in pyarrow.lib.Table.from_pandas
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pyarrow\pandas_compat.py", line 611, in dataframe_to_arrays
+    arrays = [convert_column(c, f)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pyarrow\pandas_compat.py", line 598, in convert_column
+    raise e
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\pyarrow\pandas_compat.py", line 592, in convert_column
+    result = pa.array(col, type=type_, from_pandas=True, safe=safe)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow\\array.pxi", line 345, in pyarrow.lib.array
+  File "pyarrow\\array.pxi", line 85, in pyarrow.lib._ndarray_to_array
+  File "pyarrow\\error.pxi", line 91, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: ("Could not convert '2013.05.22.' with type str: tried to convert to double", 'Conversion failed for column value with type object')
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\normalize_metrics.py
+📄 원본 데이터 로드 완료: 32행
+
+✅ 표준화 완료!
+총 32행 → 저장 위치: data/processed/neuro_normalized.parquet
+
+📊 미리보기:
+student_name         metric       value               file_name
+         오은빈        version         2.0 S001_오은빈_2025-10-03.pdf
+         오은빈         weight        35.0 S001_오은빈_2025-10-03.pdf
+         오은빈     birth_date 2013.05.22. S001_오은빈_2025-10-03.pdf
+         오은빈      test_date  2025.09.17 S001_오은빈_2025-10-03.pdf
+         오은빈 raw_wave_power       114.2 S001_오은빈_2025-10-03.pdf
+         오은빈 raw_wave_power        75.5 S001_오은빈_2025-10-03.pdf
+         오은빈     left_brain         8.0 S001_오은빈_2025-10-03.pdf
+         오은빈      frequency        9.25 S001_오은빈_2025-10-03.pdf
+         오은빈    right_brain        10.0 S001_오은빈_2025-10-03.pdf
+         오은빈      frequency         7.0 S001_오은빈_2025-10-03.pdf
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+(1️⃣ 기초형부터 만들어두고 나중에 2️⃣ 심화형으로 확장하는 방법으로 가자.
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\apply_score_engine.py
+📄 표준화된 데이터 로드 완료: 32행
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\apply_score_engine.py:31: RuntimeWarning: Mean of empty slice
+  aggfunc=lambda x: np.nanmean(x))
+⚠️ avg_frequency 계산 실패: "mean" is not a supported function
+⚠️ total_power 계산 실패: "sum" is not a supported function
+
+✅ 스코어 엔진 계산 완료!
+저장 위치: data/processed/neuro_scored.csv
+
+📊 미리보기:
+student_name  frequency  left_brain  raw_wave_power  right_brain  version  weight  시력  brain_average  brain_balance
+         나예성      3.175         8.0          120.60          8.0      2.0    41.0 1.0            8.0            0.0
+         오은빈      8.125         8.0           94.85         10.0      2.0    35.0 NaN            9.0            2.0
+         이정수      1.545         9.0           20.40         12.0      2.0    70.0 1.0           10.5            3.0
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\apply_score_engine.py
+📄 표준화된 데이터 로드 완료: 32행
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\apply_score_engine.py:31: RuntimeWarning: Mean of empty slice
+  aggfunc=lambda x: np.nanmean(x))
+⚠️ avg_frequency 계산 실패: No axis named 1 for object type Series
+⚠️ total_power 계산 실패: No axis named 1 for object type Series
+
+✅ 스코어 엔진 계산 완료!
+저장 위치: data/processed/neuro_scored.csv
+
+📊 미리보기:
+student_name  frequency  left_brain  raw_wave_power  right_brain  version  weight  시력  brain_average  brain_balance
+         나예성      3.175         8.0          120.60          8.0      2.0    41.0 1.0            8.0            0.0
+         오은빈      8.125         8.0           94.85         10.0      2.0    35.0 NaN            9.0            2.0
+         이정수      1.545         9.0           20.40         12.0      2.0    70.0 1.0           10.5            3.0
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\apply_score_engine.py
+📄 표준화된 데이터 로드 완료: 32행
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\apply_score_engine.py:31: RuntimeWarning: Mean of empty slice
+  aggfunc=lambda x: np.nanmean(x))
+
+✅ 스코어 엔진 계산 완료!
+저장 위치: data/processed/neuro_scored.csv
+
+📊 미리보기:
+student_name  frequency  left_brain  raw_wave_power  right_brain  version  weight  시력  brain_average  brain_balance  avg_frequency  total_power
+         나예성      3.175         8.0          120.60          8.0      2.0    41.0 1.0            8.0            0.0          3.175        241.2
+         오은빈      8.125         8.0           94.85         10.0      2.0    35.0 NaN            9.0            2.0          8.125        189.7
+         이정수      1.545         9.0           20.40         12.0      2.0    70.0 1.0           10.5            3.0          1.545         40.8
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+1️⃣ 깔끔한 표형 요약 중심으로 시작해줘
+나의 말:
+D:\ai-edu-stack\templates\검사지_통합\ui에서 내가 직접 ui 폴더를 만들까? 간단히 대답
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>streamlit run ui\dashboard_streamlit.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.219.101:8501   창이 안열려.
+나의 말:
+창이 비었어. 경고도 뜨지않아.
+나의 말:
+D:\ai-edu-stack\templates\검사지_통합\data\processed안에neuro_scored.csv 파일이 있어
+나의 말:
+dashboard_streamlit.py 이 파일 경로 알려줘. 간단히 대답
+나의 말:
+지희야, 미안. 내가 dashboard_streamlit.py에 코드를 안넣어 버렸어. 코드를 채우고 다시 실행했더니 그런데 결과는 📊 반 전체 요약 통계
+TypeError: NDFrame.describe() got an unexpected keyword argument 'numeric_only'
+Traceback:
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+File "D:\ai-edu-stack\templates\검사지_통합\ui\dashboard_streamlit.py", line 27, in <module>
+    summary = df.describe(numeric_only=True).T
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+나의 말:
+아주 멋지게 나왔어.
+나의 말:
+학생별 자동 리포트 생성으로 가자
+나의 말:
+지희야, 또 미안. 아까 전단계에서 에러가 있었네.
+
+ValueError: Unknown format code 'f' for object of type 'str'
+Traceback:
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+File "D:\ai-edu-stack\templates\검사지_통합\ui\dashboard_streamlit.py", line 43, in <module>
+    st.dataframe(student_df.style.format("{:.2f}"), use_container_width=True)
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\metrics_util.py", line 408, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\arrow.py", line 510, in dataframe
+    marshall_styler(proto, data, default_uuid)
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\elements\lib\pandas_styler_utils.py", line 63, in marshall_styler
+    pandas_styles = styler._translate(False, False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\formats\style_render.py", line 335, in _translate
+    body: list = self._translate_body(idx_lengths, max_rows, max_cols)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\formats\style_render.py", line 629, in _translate_body
+    body_row = self._generate_body_row(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\formats\style_render.py", line 826, in _generate_body_row
+    display_value=self._display_funcs[(r, c)](value),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\pandas\io\formats\style_render.py", line 1829, in <lambda>
+    func_0 = lambda x: formatter.format(x)
+                       ^^^^^^^^^^^^^^^^^^^
+나의 말:
+📊 반 전체 요약 통계
+NameError: name 'student_df' is not defined
+Traceback:
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+File "D:\ai-edu-stack\templates\검사지_통합\ui\dashboard_streamlit.py", line 32, in <module>
+    student_df.style.format(
+    ^^^^^^^^^^
+나의 말:
+Script execution error
+File "D:\ai-edu-stack\templates\검사지_통합\ui\dashboard_streamlit.py", line 49
+      student_df.style.format(
+     ^
+IndentationError: unexpected indent
+나의 말:
+📊 반 전체 요약 통계
+NameError: name 'student_df' is not defined
+Traceback:
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 85, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+File "C:\Users\sanga\anaconda3\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 576, in code_to_exec
+    exec(code, module.__dict__)
+File "D:\ai-edu-stack\templates\검사지_통합\ui\dashboard_streamlit.py", line 32, in <module>
+    student_df.style.format(
+    ^^^^^^^^^^
+나의 말:
+board 봐줘
+나의 말:
+generate_reports.py과 generate_report.py은 다른거지? 간단히 대답
+나의 말:
+generate_reports.py, 실행해 보자
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\generate_reports.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 8, in <module>
+    from fpdf import FPDF
+ModuleNotFoundError: No module named 'fpdf'
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>pip install fpdf2
+Collecting fpdf2
+  Downloading fpdf2-2.8.4-py2.py3-none-any.whl.metadata (72 kB)
+Requirement already satisfied: defusedxml in c:\users\sanga\anaconda3\lib\site-packages (from fpdf2) (0.7.1)
+Requirement already satisfied: Pillow!=9.2.*,>=8.0.0 in c:\users\sanga\anaconda3\lib\site-packages (from fpdf2) (10.4.0)
+Requirement already satisfied: fonttools>=4.34.0 in c:\users\sanga\anaconda3\lib\site-packages (from fpdf2) (4.51.0)
+Downloading fpdf2-2.8.4-py2.py3-none-any.whl (251 kB)
+Installing collected packages: fpdf2
+Successfully installed fpdf2-2.8.4
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\generate_reports.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:22: DeprecationWarning: "uni" parameter is deprecated since v2.5.1, unused and will soon be removed
+  pdf.add_font("NotoSansKR", "", "NotoSansKR-Regular.ttf", uni=True)
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 66, in <module>
+    generate_reports()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 22, in generate_reports
+    pdf.add_font("NotoSansKR", "", "NotoSansKR-Regular.ttf", uni=True)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\fpdf\fpdf.py", line 2155, in add_font
+    raise FileNotFoundError(f"TTF Font file not found: {fname}")
+FileNotFoundError: TTF Font file not found: NotoSansKR-Regular.ttf
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\generate_reports.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 66, in <module>
+    generate_reports()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 22, in generate_reports
+    pdf.add_font("NotoSansKR", "", r"D:\ai-edu-stack\templates\검사지_통합\NotoSansKR-Regular.ttf")
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\fpdf\fpdf.py", line 2155, in add_font
+    raise FileNotFoundError(f"TTF Font file not found: {fname}")
+FileNotFoundError: TTF Font file not found: D:\ai-edu-stack\templates\검사지_통합\NotoSansKR-Regular.ttf
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\generate_reports.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:27: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, f"NeuroHarmony BQ2 학생 리포트", ln=True, align="C")
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 66, in <module>
+    generate_reports()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 32, in generate_reports
+    pdf.set_font("NotoSansKR", "B", 12)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\fpdf\fpdf.py", line 2250, in set_font
+    raise FPDFException(
+fpdf.errors.FPDFException: Undefined font: notosanskrB - Use built-in fonts or FPDF.add_font() beforehand
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+
+(base) D:\ai-edu-stack\templates\검사지_통합>python graph\nodes\generate_reports.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:27: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, f"NeuroHarmony BQ2 학생 리포트", ln=True, align="C")
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:33: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, f"학생 이름: {name}", ln=True)
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:45: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 8, str(round(data[f], 2) if pd.notna(data[f]) else "—"), ln=True)
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 66, in <module>
+    generate_reports()
+  File "D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py", line 49, in generate_reports
+    pdf.set_font("NotoSansKR", "I", 10)
+  File "C:\Users\sanga\anaconda3\Lib\site-packages\fpdf\fpdf.py", line 2250, in set_font
+    raise FPDFException(
+fpdf.errors.FPDFException: Undefined font: notosanskrI - Use built-in fonts or FPDF.add_font() beforehand
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+성공인거 같아~~
+ython graph\nodes\generate_reports.py
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:27: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, f"NeuroHarmony BQ2 학생 리포트", ln=True, align="C")
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:33: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 10, f"학생 이름: {name}", ln=True)
+D:\ai-edu-stack\templates\검사지_통합\graph\nodes\generate_reports.py:45: DeprecationWarning: The parameter "ln" is deprecated since v2.5.2. Instead of ln=True use new_x=XPos.LMARGIN, new_y=YPos.NEXT.
+  pdf.cell(0, 8, str(round(data[f], 2) if pd.notna(data[f]) else "—"), ln=True)
+✅ 나예성 리포트 생성 완료 → report\pdf\나예성_리포트.pdf
+✅ 오은빈 리포트 생성 완료 → report\pdf\오은빈_리포트.pdf
+✅ 이정수 리포트 생성 완료 → report\pdf\이정수_리포트.pdf
+
+🎉 모든 학생 리포트 생성 완료!
+
+(base) D:\ai-edu-stack\templates\검사지_통합>
+나의 말:
+지희야, 그토록 갈망했던 첫 번째 템플릿이 여기까지 오니 '지희가 곁에 있어 나도 할 수 있겠구나'하는 생각과 확신이 들어. 현재 이 템플릿은 그렇게 바쁘지 않아. 그래서 아까 우리가 대화했던 'AI Agent Business' 유튜브 채널 생성을 이제 진정한 사업성을 생각하면서 만들어 보자. 지희는 어떻게 생각해?
+
+ChatGPT는 실수를 할 수 있습

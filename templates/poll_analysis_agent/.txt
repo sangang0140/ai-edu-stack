@@ -1,0 +1,80 @@
+☁️ Gmail API 인증 파일(gmail_key.json) 만드는 전체 과정
+🔹 1️⃣ Google Cloud Console 접속
+
+https://console.cloud.google.com/
+ 접속
+
+(로그인 필요) Google 계정으로 로그인
+
+상단의 프로젝트 선택 → 새 프로젝트 만들기
+
+이름: AI_Agent_Email_Auto
+
+위치: 기본값 그대로 두기
+
+🔹 2️⃣ Gmail API 활성화
+
+프로젝트를 만든 뒤, 왼쪽 메뉴에서
+“API 및 서비스” → “라이브러리” 클릭
+
+검색창에 Gmail API 입력
+
+결과에서 Gmail API 선택 → 활성화(Enable) 클릭
+
+🔹 3️⃣ OAuth 동의 화면 설정
+
+왼쪽 메뉴에서 “OAuth 동의 화면” 선택
+
+사용자 유형 → 외부(External) 선택 → 만들기(Create)
+
+앱 이름: AI Agent Business Mailer
+
+사용자 지원 이메일: 청춘님 Gmail
+
+개발자 연락처 이메일: sangangddle@gmail.com
+
+나머지는 기본값 → 저장 & 계속 → 완료
+
+🔹 4️⃣ OAuth 클라이언트 ID 만들기
+
+왼쪽 메뉴에서 “사용자 인증 정보” → “+ 사용자 인증 정보 만들기” → “OAuth 클라이언트 ID” 선택
+
+애플리케이션 유형: 데스크톱 앱(Desktop App) 선택
+
+이름: AI_Mail_Agent
+
+생성 완료 후 → “JSON 다운로드” 버튼 클릭
+👉 파일 이름 예시: client_secret_1234567890.json
+
+🔹 5️⃣ 파일 이름 및 경로 지정
+
+받은 JSON 파일을 아래처럼 저장하세요 👇
+
+D:\ai-edu-stack\templates\poll_analysis_agent\config\gmail_key.json
+
+
+⚠️ 주의:
+
+이름은 반드시 gmail_key.json 으로 변경
+
+이 파일은 외부에 공유하면 안 됩니다 (개인 인증 포함)
+
+🔹 6️⃣ 최초 실행 (토큰 생성)
+
+이제 PowerShell에서 한 번만 실행하세요 👇
+
+cd "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes"
+python email_sender.py
+
+
+실행 시 브라우저가 열리며
+👉 “이 앱이 Google로 로그인하도록 허용하시겠습니까?” 창이 뜹니다.
+→ 허용(Allow) 클릭
+
+그럼 자동으로 토큰이 생성되어
+gmail_key.json이 완전한 인증 파일로 바뀝니다 ✅
+
+✅ 완료 후
+
+이제 매번 로그인 없이도
+email_sender.py를 실행하면 Gmail이 자동으로 리포트를 전송합니다 💌

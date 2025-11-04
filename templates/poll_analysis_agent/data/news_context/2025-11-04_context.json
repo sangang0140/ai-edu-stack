@@ -1,0 +1,42 @@
+{
+  "date": "2025-11-04",
+  "total_articles": 156,
+  "sentiment": {
+    "positive": 31,
+    "negative": 119,
+    "neutral": 6
+  },
+  "top_keywords": [
+    "10월",
+    "1일",
+    "2일",
+    "3일",
+    "ai",
+    "apec",
+    "것으로",
+    "경북",
+    "경주",
+    "관련"
+  ],
+  "representative_articles": [
+    {
+      "title": "이 대통령 \"트럼프 피스메이커 역할 인정해야... 북, 적대적 표현 완화\"",
+      "source": "Ohmynews.com",
+      "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003179152",
+      "sentiment": "2 stars"
+    },
+    {
+      "title": "국힘 “대장동 최종 결정권자는 이 대통령…재판 재개돼야”",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202511011226001",
+      "sentiment": "1 star"
+    },
+    {
+      "title": "이 대통령 “한반도 평화는 필수…선제적 조치 지속할 것”",
+      "source": "Khan.co.kr",
+      "url": "https://www.khan.co.kr/article/202511011312001",
+      "sentiment": "5 stars"
+    }
+  ],
+  "disclaimer": "※ 본 분석은 NewsAPI에서 수집한 공개 뉴스 데이터를 기반으로 작성되었습니다."
+}

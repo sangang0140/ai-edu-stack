@@ -1,0 +1,9 @@
+metric_map:
+  BQ: version
+  체중: weight
+  생년월일: birth_date
+  측정일: test_date
+  절대세기 원시뇌파: raw_wave_power
+  좌뇌: left_brain
+  우뇌: right_brain
+  Hz: frequency

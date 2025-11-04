@@ -1,0 +1,234 @@
+[23:13:32] 
+⚡ 월요일 10시 이후 실행 감지 → Realmeter 루틴 즉시 실행
+
+[23:13:32] 
+📊 월요일 — Realmeter 데이터 자동 수집 및 분석 중...
+
+[23:13:32] 
+🗓️ [2025-11-03 (Monday)] 자동 실행 시작
+
+[23:13:32] ▶ 실행 중: poll_collector.py
+[23:13:32] ❌ 오류: poll_collector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\poll_collector.py", line 37, in <module>
+    print(f"\u2705 여론조사 데이터 생성 완료: {save_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2705' in position 0: illegal multibyte sequence
+
+[23:13:34] ▶ 실행 중: trend_detector.py
+[23:13:38] ❌ 오류: trend_detector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\trend_detector.py", line 90, in <module>
+    print(f"\U0001f4ca 트렌드 및 인사이트 분석 완료 ({today})")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f4ca' in position 0: illegal multibyte sequence
+
+[23:13:40] ▶ 실행 중: insight_agent.py
+[23:13:48] ❌ 오류: insight_agent.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\insight_agent.py", line 78, in <module>
+    print(f"\U0001f3ac 유튜브 해설 스크립트 생성 완료: {script_path}\n")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f3ac' in position 0: illegal multibyte sequence
+
+[23:13:50] ▶ 실행 중: report_generator.py
+[23:13:50] ❌ 오류: report_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\report_generator.py", line 25, in <module>
+    trend_data = load_json(trend_path)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\report_generator.py", line 22, in load_json
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "C:\Users\sanga\.pyenv\pyenv-win\versions\3.12.5\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\.pyenv\pyenv-win\versions\3.12.5\Lib\json\__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+
+[23:13:52] ▶ 실행 중: subtitle_generator.py
+[23:13:52] ❌ 오류: subtitle_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\subtitle_generator.py", line 42, in <module>
+    print(f"\U0001f39e\ufe0f 자막 텍스트 자동 생성 완료 → {subtitle_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f39e' in position 0: illegal multibyte sequence
+
+[23:13:54] ▶ 실행 중: thumbnail_generator.py
+[23:14:09] ❌ 오류: thumbnail_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\thumbnail_generator.py", line 83, in <module>
+    print(f"\U0001f5bc\ufe0f 썸네일용 Flux 프롬프트 생성 완료")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f5bc' in position 0: illegal multibyte sequence
+
+[23:14:11] 📂 결과는 D:\ai-edu-stack\templates\poll_analysis_agent\outputs 폴더에서 확인하세요.
+[23:14:11] ✅ 모든 프로세스 완료 (2025-11-03 (Monday))
+
+[23:17:47] 
+⚡ 월요일 10시 이후 실행 감지 → Realmeter 루틴 즉시 실행
+
+[23:17:47] 
+📊 월요일 — Realmeter 데이터 자동 수집 및 분석 중...
+
+[23:17:47] 
+🗓️ [2025-11-03 (Monday)] 자동 실행 시작
+
+[23:17:47] ▶ 실행 중: poll_collector.py
+[23:17:47] ❌ 오류: poll_collector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\poll_collector.py", line 37, in <module>
+    print(f"\u2705 여론조사 데이터 생성 완료: {save_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2705' in position 0: illegal multibyte sequence
+
+[23:17:49] ▶ 실행 중: trend_detector.py
+[23:17:55] ❌ 오류: trend_detector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\trend_detector.py", line 90, in <module>
+    print(f"\U0001f4ca 트렌드 및 인사이트 분석 완료 ({today})")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f4ca' in position 0: illegal multibyte sequence
+
+[23:17:57] ▶ 실행 중: insight_agent.py
+[23:18:04] ❌ 오류: insight_agent.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\insight_agent.py", line 78, in <module>
+    print(f"\U0001f3ac 유튜브 해설 스크립트 생성 완료: {script_path}\n")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f3ac' in position 0: illegal multibyte sequence
+
+[23:18:06] ▶ 실행 중: report_generator.py
+[23:18:07] ❌ 오류: report_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\report_generator.py", line 25, in <module>
+    trend_data = load_json(trend_path)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\report_generator.py", line 22, in load_json
+    return json.load(f)
+           ^^^^^^^^^^^^
+  File "C:\Users\sanga\.pyenv\pyenv-win\versions\3.12.5\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\sanga\.pyenv\pyenv-win\versions\3.12.5\Lib\json\__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)
+
+[23:18:09] ▶ 실행 중: subtitle_generator.py
+[23:18:09] ❌ 오류: subtitle_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\subtitle_generator.py", line 42, in <module>
+    print(f"\U0001f39e\ufe0f 자막 텍스트 자동 생성 완료 → {subtitle_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f39e' in position 0: illegal multibyte sequence
+
+[23:18:11] ▶ 실행 중: thumbnail_generator.py
+[23:18:23] ❌ 오류: thumbnail_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\thumbnail_generator.py", line 83, in <module>
+    print(f"\U0001f5bc\ufe0f 썸네일용 Flux 프롬프트 생성 완료")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f5bc' in position 0: illegal multibyte sequence
+
+[23:18:25] 📂 결과는 D:\ai-edu-stack\templates\poll_analysis_agent\outputs 폴더에서 확인하세요.
+[23:18:25] ✅ 모든 프로세스 완료 (2025-11-03 (Monday))
+
+[23:21:11] 
+⚡ 월요일 10시 이후 실행 감지 → Realmeter 루틴 즉시 실행
+
+[23:21:11] 
+📊 월요일 — Realmeter 데이터 자동 수집 및 분석 중...
+
+[23:21:11] 
+🗓️ [2025-11-03 (Monday)] 자동 실행 시작
+
+[23:21:11] ▶ 실행 중: poll_collector.py
+[23:21:11] ❌ 오류: poll_collector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\poll_collector.py", line 37, in <module>
+    print(f"\u2705 여론조사 데이터 생성 완료: {save_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\u2705' in position 0: illegal multibyte sequence
+
+[23:21:13] ▶ 실행 중: trend_detector.py
+[23:21:19] ❌ 오류: trend_detector.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\trend_detector.py", line 90, in <module>
+    print(f"\U0001f4ca 트렌드 및 인사이트 분석 완료 ({today})")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f4ca' in position 0: illegal multibyte sequence
+
+[23:21:21] ▶ 실행 중: insight_agent.py
+[23:21:26] ❌ 오류: insight_agent.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\insight_agent.py", line 78, in <module>
+    print(f"\U0001f3ac 유튜브 해설 스크립트 생성 완료: {script_path}\n")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f3ac' in position 0: illegal multibyte sequence
+
+[23:21:28] ▶ 실행 중: report_generator.py
+[23:21:28] ❌ 오류: report_generator.py
+Font MPDFAA+NanumGothic is missing the following glyphs: '\ufeff' (\ufeff)
+TSI0 NOT subset; don't know how to subset; dropped
+TSI1 NOT subset; don't know how to subset; dropped
+TSI2 NOT subset; don't know how to subset; dropped
+TSI3 NOT subset; don't know how to subset; dropped
+TSI5 NOT subset; don't know how to subset; dropped
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\report_generator.py", line 70, in <module>
+    print(f"\U0001f4f0 AI 앵커 스타일 리포트 생성 완료 → {report_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f4f0' in position 0: illegal multibyte sequence
+
+[23:21:30] ▶ 실행 중: subtitle_generator.py
+[23:21:31] ❌ 오류: subtitle_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\subtitle_generator.py", line 42, in <module>
+    print(f"\U0001f39e\ufe0f 자막 텍스트 자동 생성 완료 → {subtitle_path}")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f39e' in position 0: illegal multibyte sequence
+
+[23:21:33] ▶ 실행 중: thumbnail_generator.py
+[23:21:41] ❌ 오류: thumbnail_generator.py
+Traceback (most recent call last):
+  File "D:\ai-edu-stack\templates\poll_analysis_agent\graph\nodes\thumbnail_generator.py", line 83, in <module>
+    print(f"\U0001f5bc\ufe0f 썸네일용 Flux 프롬프트 생성 완료")
+UnicodeEncodeError: 'cp949' codec can't encode character '\U0001f5bc' in position 0: illegal multibyte sequence
+
+[23:22:27] 📂 결과는 D:\ai-edu-stack\templates\poll_analysis_agent\outputs 폴더에서 확인하세요.
+[23:22:27] ✅ 모든 프로세스 완료 (2025-11-03 (Monday))
+
+[23:26:41] 
+⚡ 월요일 10시 이후 실행 감지 → Realmeter 루틴 즉시 실행
+
+[23:26:41] 
+📊 월요일 — Realmeter 데이터 자동 수집 및 분석 중...
+
+[23:26:41] 
+🗓️ [2025-11-03 (Monday)] 자동 실행 시작
+
+[23:26:41] ▶ 실행 중: poll_collector.py
+[23:26:41] ✅ 완료: poll_collector.py
+[23:26:43] ▶ 실행 중: trend_detector.py
+[23:26:47] ✅ 완료: trend_detector.py
+[23:26:49] ▶ 실행 중: insight_agent.py
+[23:26:55] ✅ 완료: insight_agent.py
+[23:26:57] ▶ 실행 중: report_generator.py
+[23:26:57] ✅ 완료: report_generator.py
+[23:26:59] ▶ 실행 중: subtitle_generator.py
+[23:27:00] ✅ 완료: subtitle_generator.py
+[23:27:02] ▶ 실행 중: thumbnail_generator.py
+[23:27:17] ✅ 완료: thumbnail_generator.py
+[23:27:19] 📂 결과는 D:\ai-edu-stack\templates\poll_analysis_agent\outputs 폴더에서 확인하세요.
+[23:27:19] ✅ 모든 프로세스 완료 (2025-11-03 (Monday))
+
+[23:35:21] 
+⚡ 월요일 10시 이후 실행 감지 → Realmeter 루틴 즉시 실행
+
+[23:35:21] 
+📊 월요일 — Realmeter 데이터 자동 수집 및 분석 중...
+
+[23:35:21] 
+🗓️ [2025-11-03 (Monday)] 자동 실행 시작
+
+[23:35:21] ▶ 실행 중: poll_collector.py
+[23:35:21] ✅ 완료: poll_collector.py
+[23:35:23] ▶ 실행 중: trend_detector.py
+[23:35:27] ✅ 완료: trend_detector.py
+[23:35:29] ▶ 실행 중: insight_agent.py
+[23:35:33] ✅ 완료: insight_agent.py
+[23:35:35] ▶ 실행 중: report_generator.py
+[23:35:36] ✅ 완료: report_generator.py
+[23:35:38] ▶ 실행 중: subtitle_generator.py
+[23:35:38] ✅ 완료: subtitle_generator.py
+[23:35:40] ▶ 실행 중: thumbnail_generator.py
+[23:35:50] ✅ 완료: thumbnail_generator.py
+[23:35:52] 📂 결과는 D:\ai-edu-stack\templates\poll_analysis_agent\outputs 폴더에서 확인하세요.
+[23:35:52] ✅ 모든 프로세스 완료 (2025-11-03 (Monday))
+

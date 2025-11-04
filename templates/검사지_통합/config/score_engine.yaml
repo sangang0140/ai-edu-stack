@@ -1,0 +1,35 @@
+version: 0.1
+norms:
+  - id: multicultural_adaptation
+    source: multicultural_form
+    compute: sum(items[Q1:Q5])
+    normalize: minmax(0, 100)
+  - id: attention_index
+    source: neuroharmony
+    compute: weighted_sum({beta: 0.4, theta: 0.3, alpha: 0.3})
+    normalize: minmax(0, 100)
+  - id: study_habit
+    source: school_form
+    compute: sum(items[H1:H4])
+    normalize: minmax(0, 100)
+profiles:
+  - id: risk_flags
+    rules:
+      - when: attention_index < 35 and multicultural_adaptation > 70
+        then:
+          - label: 집중/문화 적응 동시 리스크
+            severity: high
+      - when: study_habit < 40
+        then:
+          - label: 학습 습관 개선 필요
+            severity: medium
+recommendations:
+  - id: four_week_plan
+    use_rag: true
+    prompt: |
+      아래 프로필을 바탕으로 4주 개입 계획을 작성하세요.
+      - 학년/연령
+      - 리스크 플래그
+      - 다문화 적응 지표
+      - 보호자 협력 방안
+      출력: 요약, 주차별 목표, 가정/학교 실천, 평가 기준

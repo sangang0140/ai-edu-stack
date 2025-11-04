@@ -1,0 +1,213 @@
+# bootstrap_min.py — 안전 버전(문제되는 dedent 블록 제거)
+from pathlib import Path
+
+ROOT = Path(r"D:/ai-edu-stack/templates/검사지_통합")
+
+FILES = {
+    ROOT / "requirements.txt": (
+        "python-dotenv\npydantic>=2\npandas\nPyPDF2\njinja2\n"
+        "langchain>=0.2\nlangchain-community>=0.2\nlanggraph>=0.2\nchromadb\nfastapi\nuvicorn\n"
+    ),
+    ROOT / ".env.sample": (
+        "OPENAI_API_KEY=\nUPSTAGE_API_KEY=\nNOTION_TOKEN=\nSHEETS_SERVICE_ACCOUNT_JSON=\n"
+    ),
+    ROOT / "config" / "score_engine.yaml": (
+        "version: 0.1\n"
+        "norms:\n"
+        "  - id: multicultural_adaptation\n    source: multicultural_form\n"
+        "    compute: sum(items[Q1:Q5])\n    normalize: minmax(0, 100)\n"
+        "  - id: attention_index\n    source: neuroharmony\n"
+        "    compute: weighted_sum({beta: 0.4, theta: 0.3, alpha: 0.3})\n"
+        "    normalize: minmax(0, 100)\n"
+        "  - id: study_habit\n    source: school_form\n"
+        "    compute: sum(items[H1:H4])\n    normalize: minmax(0, 100)\n"
+        "profiles:\n"
+        "  - id: risk_flags\n    rules:\n"
+        "      - when: attention_index < 35 and multicultural_adaptation > 70\n"
+        "        then:\n          - label: 집중/문화 적응 동시 리스크\n            severity: high\n"
+        "      - when: study_habit < 40\n"
+        "        then:\n          - label: 학습 습관 개선 필요\n            severity: medium\n"
+        "recommendations:\n"
+        "  - id: four_week_plan\n    use_rag: true\n    prompt: |\n"
+        "      아래 프로필을 바탕으로 4주 개입 계획을 작성하세요.\n"
+        "      - 학년/연령\n      - 리스크 플래그\n      - 다문화 적응 지표\n      - 보호자 협력 방안\n"
+        "      출력: 요약, 주차별 목표, 가정/학교 실천, 평가 기준\n"
+    ),
+    ROOT / "graph" / "state.py": (
+        "from typing import Any, Dict, List, Optional\n"
+        "from pydantic import BaseModel, Field\n\n"
+        "class Student(BaseModel):\n"
+        "    id: str\n    name: Optional[str] = None\n    grade: Optional[str] = None\n"
+        "    school: Optional[str] = None\n    guardians: Optional[List[str]] = None\n\n"
+        "class PipelineState(BaseModel):\n"
+        "    student: Student\n"
+        "    raw_inputs: Dict[str, Any] = Field(default_factory=dict)\n"
+        "    validated: Dict[str, Any] = Field(default_factory=dict)\n"
+        "    scores: Dict[str, Any] = Field(default_factory=dict)\n"
+        "    analysis: Dict[str, Any] = Field(default_factory=dict)\n"
+        "    report: Dict[str, Any] = Field(default_factory=dict)\n"
+        "    log: List[Dict[str, Any]] = Field(default_factory=list)\n\n"
+        "    def log_event(self, event: str, payload: Optional[Dict[str, Any]] = None):\n"
+        "        self.log.append({'event': event, 'payload': payload or {}})\n"
+    ),
+    ROOT / "graph" / "nodes" / "__init__.py": (
+        "from . import ingest_inputs, validate_schema, score_engine, rag_interpreter, "
+        "generate_report, human_review, persist_records, notify_and_tasks, audit_and_eval\n"
+    ),
+    ROOT / "graph" / "nodes" / "ingest_inputs.py": (
+        "from pathlib import Path\nfrom typing import Dict, Any\nfrom ..state import PipelineState\n\n"
+        "DATA_RAW = Path(__file__).resolve().parents[2] / 'data' / 'raw'\n"
+        "DATA_RAW.mkdir(parents=True, exist_ok=True)\n\n"
+        "def run(state: PipelineState, payload: Dict[str, Any]) -> PipelineState:\n"
+        "    state.raw_inputs.update(payload)\n"
+        "    state.log_event('ingest_inputs', {'keys': list(payload.keys())})\n"
+        "    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "validate_schema.py": (
+        "import pandas as pd\nfrom ..state import PipelineState\n\n"
+        "REQUIRED_COLUMNS = ['student_id','Q1','Q2','Q3','Q4','Q5']\n\n"
+        "def run(state: PipelineState) -> PipelineState:\n"
+        "    forms_csv = state.raw_inputs.get('forms_csv')\n"
+        "    schema_ok, anomalies = True, []\n"
+        "    if forms_csv:\n"
+        "        df = pd.read_csv(forms_csv)\n"
+        "        missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]\n"
+        "        if missing:\n"
+        "            schema_ok = False\n"
+        "            anomalies.append({'missing_columns': missing})\n"
+        "    state.validated = {'schema_ok': schema_ok, 'anomalies': anomalies}\n"
+        "    state.log_event('validate_schema', state.validated)\n"
+        "    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "score_engine.py": (
+        "import pandas as pd\nfrom pathlib import Path\nfrom ..state import PipelineState\n\n"
+        "def _minmax(x, xmin, xmax):\n"
+        "    if xmax == xmin: return 0\n"
+        "    return (x - xmin) * 100.0 / (xmax - xmin)\n\n"
+        "def run(state: PipelineState) -> PipelineState:\n"
+        "    forms_csv = state.raw_inputs.get('forms_csv')\n"
+        "    df = pd.read_csv(forms_csv) if forms_csv else pd.DataFrame()\n"
+        "    scores = {}\n"
+        "    if not df.empty:\n"
+        "        df['mh_sum'] = df[['Q1','Q2','Q3','Q4','Q5']].sum(axis=1)\n"
+        "        mh_val = float(df['mh_sum'].iloc[0])\n"
+        "        scores['multicultural_adaptation'] = _minmax(mh_val, df['mh_sum'].min(), df['mh_sum'].max())\n"
+        "    scores['attention_index'] = 50.0\n"
+        "    scores['study_habit'] = 60.0\n"
+        "    flags = []\n"
+        "    if scores.get('attention_index',0) < 35 and scores.get('multicultural_adaptation',0) > 70:\n"
+        "        flags.append({'label':'집중/문화 적응 동시 리스크','severity':'high'})\n"
+        "    if scores.get('study_habit',100) < 40:\n"
+        "        flags.append({'label':'학습 습관 개선 필요','severity':'medium'})\n"
+        "    state.scores = {'values': scores, 'flags': flags}\n"
+        "    state.log_event('score_engine', state.scores)\n"
+        "    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "rag_interpreter.py": (
+        "from ..state import PipelineState\n\n"
+        "def run(state: PipelineState) -> PipelineState:\n"
+        "    scores = state.scores.get('values', {})\n"
+        "    flags = state.scores.get('flags', [])\n"
+        "    insights = {\n"
+        "        'summary': f\"요약: 핵심 지표 {scores}.\",\n"
+        "        'risk': flags,\n"
+        "        'guidance': ['학부모 소통 강화','주 2회 집중력 훈련 활동'],\n"
+        "    }\n"
+        "    state.analysis = insights\n"
+        "    state.log_event('rag_interpreter', insights)\n"
+        "    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "generate_report.py": (
+        "from pathlib import Path\nfrom ..state import PipelineState\n\n"
+        "OUTPUT = Path(__file__).resolve().parents[2] / 'outputs' / 'reports'\n"
+        "OUTPUT.mkdir(parents=True, exist_ok=True)\n\n"
+        "REPORT_TEMPLATE = (\n"
+        "    '# 통합 결과 요약 (v0.1)\\n\\n'\n"
+        "    '**학생**: {name} ({sid})  |  **학년**: {grade}\\n\\n'\n"
+        "    '## 1) 핵심 지표\\n{scores}\\n\\n'\n"
+        "    '## 2) 리스크 플래그\\n{flags}\\n\\n'\n"
+        "    '## 3) 해석 요약\\n{summary}\\n\\n'\n"
+        "    '## 4) 4주 개입 권고(요약)\\n- 학부모: {parent}\\n- 학교: {school}\\n'\n"
+        ")\n\n"
+        "def run(state: PipelineState) -> PipelineState:\n"
+        "    student = state.student\n"
+        "    scores = state.scores.get('values', {})\n"
+        "    flags = state.scores.get('flags', [])\n"
+        "    analysis = state.analysis or {}\n"
+        "    md = REPORT_TEMPLATE.format(\n"
+        "        name=student.name or '-', sid=student.id, grade=student.grade or '-',\n"
+        "        scores=scores, flags=flags, summary=analysis.get('summary','-'),\n"
+        "        parent='가정에서 10분 대화 + 주 2회 훈련', school='담임과 주간 점검 루틴',\n"
+        "    )\n"
+        "    out = OUTPUT / f'report_{student.id}.md'\n"
+        "    out.write_text(md, encoding='utf-8')\n"
+        "    state.report = {'md': str(out)}\n"
+        "    state.log_event('generate_report', {'path': str(out)})\n"
+        "    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "human_review.py": (
+        "from ..state import PipelineState\n\ndef run(state: PipelineState) -> PipelineState:\n"
+        "    state.log_event('human_review', {'approved': True})\n    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "persist_records.py": (
+        "from ..state import PipelineState\n\ndef run(state: PipelineState) -> PipelineState:\n"
+        "    state.log_event('persist_records', {'stored': True})\n    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "notify_and_tasks.py": (
+        "from ..state import PipelineState\n\ndef run(state: PipelineState) -> PipelineState:\n"
+        "    state.log_event('notify_and_tasks', {'notified': True})\n    return state\n"
+    ),
+    ROOT / "graph" / "nodes" / "audit_and_eval.py": (
+        "from ..state import PipelineState\n\ndef run(state: PipelineState) -> PipelineState:\n"
+        "    state.log_event('audit_and_eval', {'collected': True})\n    return state\n"
+    ),
+    ROOT / "app.py": (
+        "from graph.state import PipelineState, Student\n"
+        "from graph.nodes import (\n"
+        "  ingest_inputs, validate_schema, score_engine, rag_interpreter,\n"
+        "  generate_report, human_review, persist_records, notify_and_tasks, audit_and_eval\n"
+        ")\n\n"
+        "def run_pipeline(forms_csv: str, student_id: str = 'S001'):\n"
+        "  state = PipelineState(student=Student(id=student_id, name='홍길동', grade='6'))\n"
+        "  state = ingest_inputs.run(state, {'forms_csv': forms_csv})\n"
+        "  state = validate_schema.run(state)\n"
+        "  if not state.validated.get('schema_ok', False):\n"
+        "      return state\n"
+        "  state = score_engine.run(state)\n"
+        "  state = rag_interpreter.run(state)\n"
+        "  state = generate_report.run(state)\n"
+        "  state = human_review.run(state)\n"
+        "  state = persist_records.run(state)\n"
+        "  state = notify_and_tasks.run(state)\n"
+        "  state = audit_and_eval.run(state)\n"
+        "  return state\n\n"
+        "if __name__ == '__main__':\n"
+        "  st = run_pipeline('data/raw/forms_demo.csv')\n"
+        "  print('Report:', st.report)\n"
+        "  print('Log events:', len(st.log))\n"
+    ),
+    ROOT / "README.md": (
+        "# 검사지+NeuroHarmony+다문화 통합 템플릿 (v0.1)\n"
+        "실행: `python templates/검사지_통합/app.py`\n"
+    ),
+}
+
+EXTRA_DIRS = [
+    ROOT / "rag" / "docs",
+    ROOT / "data" / "raw",
+    ROOT / "data" / "processed",
+    ROOT / "outputs" / "reports",
+]
+
+DEMO_CSV = ROOT / "data" / "raw" / "forms_demo.csv"
+
+for d in [*{p.parent for p in FILES.keys()}, *EXTRA_DIRS]:
+    d.mkdir(parents=True, exist_ok=True)
+
+for p, c in FILES.items():
+    p.write_text(c, encoding="utf-8")
+
+if not DEMO_CSV.exists():
+    DEMO_CSV.write_text("student_id,Q1,Q2,Q3,Q4,Q5\nS001,3,4,5,2,4\n", encoding="utf-8")
+
+print("✔ 스켈레톤 생성 완료:", ROOT)

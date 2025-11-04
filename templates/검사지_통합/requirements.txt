@@ -1,0 +1,12 @@
+python-dotenv
+pydantic>=2
+pandas
+PyPDF2
+jinja2
+langchain>=0.2
+langchain-community>=0.2
+langgraph>=0.2
+chromadb
+fastapi
+uvicorn
+pdfplumber

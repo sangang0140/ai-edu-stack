@@ -1,0 +1,12 @@
+score_engine:
+  # 좌우뇌 평균
+  brain_average: "(left_brain + right_brain) / 2"
+
+  # 좌우뇌 균형도 (차이 절대값)
+  brain_balance: "abs(left_brain - right_brain)"
+
+  # 평균 주파수 (frequency 값이 2개 있을 경우 평균)
+  avg_frequency: "mean(frequency)"
+
+  # 절대세기 총합
+  total_power: "sum(raw_wave_power)"
