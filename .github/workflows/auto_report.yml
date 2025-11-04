@@ -1,0 +1,38 @@
+name: AI Poll Auto Report
+
+on:
+  schedule:
+    # 매주 월요일(1)과 금요일(5) 오전 11시 (KST = UTC+9 → UTC 02시)
+    - cron: '0 2 * * 1,5'
+  workflow_dispatch:  # 수동 실행도 가능하게
+
+jobs:
+  run-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python 환경 세팅
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 필수 패키지 설치
+        run: |
+          pip install -r templates/poll_analysis_agent/requirements.txt
+
+      - name: ⚙️ 여론 분석 파이프라인 실행
+        run: |
+          python templates/poll_analysis_agent/graph/nodes/poll_collector.py
+          python templates/poll_analysis_agent/graph/nodes/trend_detector.py
+          python templates/poll_analysis_agent/graph/nodes/insight_agent.py
+          python templates/poll_analysis_agent/graph/nodes/report_generator.py
+          python templates/poll_analysis_agent/graph/nodes/email_sender.py
+
+      - name: 📤 리포트 PDF 업로드 (백업용)
+        uses: actions/upload-artifact@v4
+        with:
+          name: poll-reports
+          path: templates/poll_analysis_agent/data/report/*.pdf
