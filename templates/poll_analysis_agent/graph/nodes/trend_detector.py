@@ -24,12 +24,16 @@ if not openai_api_key:
 
 client = OpenAI(api_key=openai_api_key)
 
-# === 📊 데이터 로드 ===
+# === 📂 OS 독립 경로 설정 ===
 today = datetime.now().strftime("%Y-%m-%d")
 base_dir = Path(__file__).resolve().parents[2]
 raw_path = base_dir / "data" / "raw" / f"poll_data_{today}.json"
 trend_output_path = base_dir / "data" / "processed" / f"trend_summary_{today}.json"
 
+print(f"📁 데이터 파일 경로 확인: {raw_path}")
+print(f"📁 저장될 경로: {trend_output_path}")
+
+# === 📊 데이터 로드 ===
 if not raw_path.exists():
     raise FileNotFoundError(f"⚠️ 여론조사 데이터 파일이 없습니다: {raw_path}")
 
