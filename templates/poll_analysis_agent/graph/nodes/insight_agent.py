@@ -1,82 +1,77 @@
 # -*- coding: utf-8 -*-
 """
 insight_agent.py
-AI 여론 해설 스크립트 자동 생성기 (뉴스 앵커 스타일)
+AI 여론 리포트 자동화 템플릿 - 인사이트 분석 노드 (OpenAI SDK v1.x 대응)
 """
 
 import os
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
 import json
 from datetime import datetime
-import openai
+from pathlib import Path
+from openai import OpenAI
 
-# === OpenAI Key 불러오기 ===
-key_path = r"D:\ai-edu-stack\templates\poll_analysis_agent\config\openai_key.txt"
-with open(key_path, "r", encoding="utf-8") as f:
-    openai.api_key = f.read().strip()
+# === 🔑 OpenAI API Key 로드 ===
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
-# === 경로 설정 ===
-BASE_DIR = r"D:\ai-edu-stack\templates\poll_analysis_agent"
-OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+if not openai_api_key:
+    key_path = Path(__file__).resolve().parents[2] / "config" / "openai_key.txt"
+    if key_path.exists():
+        openai_api_key = key_path.read_text(encoding="utf-8").strip()
 
+if not openai_api_key:
+    raise ValueError("❌ OPENAI_API_KEY 환경변수가 없거나 openai_key.txt 파일이 없습니다.")
+
+client = OpenAI(api_key=openai_api_key)
+
+# === 📄 트렌드 요약 불러오기 ===
 today = datetime.now().strftime("%Y-%m-%d")
-trend_path = os.path.join(OUTPUT_DIR, f"trend_summary_{today}.json")
-script_path = os.path.join(OUTPUT_DIR, f"youtube_script_{today}.txt")
+base_dir = Path(__file__).resolve().parents[2]
+trend_path = base_dir / "data" / "processed" / f"trend_summary_{today}.json"
+insight_output_path = base_dir / "data" / "processed" / f"insight_summary_{today}.json"
 
-# === 입력 데이터 확인 ===
-if not os.path.exists(trend_path):
-    print(f"❌ {trend_path} 파일이 없습니다. trend_detector.py를 먼저 실행하세요.")
-    exit()
+if not trend_path.exists():
+    raise FileNotFoundError(f"⚠️ 트렌드 요약 파일이 없습니다: {trend_path}")
 
-# === 트렌드 요약 불러오기 ===
-with open(trend_path, "r", encoding="utf-8-sig") as f:
-    data = json.load(f)
+with open(trend_path, "r", encoding="utf-8") as f:
+    trend_summary = json.load(f)
 
-president_diff = data["president_diff"]
-democrat_diff = data["party_diff"]["더불어민주당"]
-power_diff = data["party_diff"]["국민의힘"]
-analysis = data["analysis"]
-
-# === 프롬프트 작성 ===
+# === 💬 GPT 인사이트 생성 ===
 prompt = f"""
-당신은 뉴스 앵커입니다.
-다음 데이터를 바탕으로 오늘의 여론 브리핑 원고를 작성하세요.
+다음은 오늘({today})의 여론조사 트렌드입니다.
 
-- 대통령 지지율 변동: {president_diff:+}%
-- 더불어민주당 지지율 변동: {democrat_diff:+}%
-- 국민의힘 지지율 변동: {power_diff:+}%
+상승 정당: {trend_summary['up_parties']}
+하락 정당: {trend_summary['down_parties']}
+주요 이슈: {trend_summary['major_issue']}
 
-요구사항:
-1. 톤은 뉴스 앵커의 말투로 하며, '안녕하십니까'로 시작하세요.
-2. 청중에게 설명하듯 자연스럽게 전달하세요.
-3. 내용은 5~7문장, 한국어로 작성하세요.
-4. 마지막에는 “이상, AI Agent Business의 여론 인사이트였습니다.”로 마무리하세요.
-
-참고 분석:
-{analysis}
+이 내용을 기반으로,
+- 여론의 방향성
+- 정책적 함의
+- 사회적 의미
+를 중심으로 5문장 내외로 요약해 주세요.
 """
 
-# === GPT 요청 ===
 try:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "너는 방송 뉴스 앵커이다."},
+            {"role": "system", "content": "당신은 정치사회 트렌드 전문가입니다."},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.7,
-        max_tokens=700
+        temperature=0.5
     )
-    anchor_script = response["choices"][0]["message"]["content"].strip()
+    insight_text = response.choices[0].message.content.strip()
 except Exception as e:
-    anchor_script = f"⚠️ AI 생성 오류: {str(e)}"
+    insight_text = f"⚠️ OpenAI API 호출 실패: {e}"
 
-# === 결과 저장 ===
-with open(script_path, "w", encoding="utf-8-sig") as f:
-    f.write(anchor_script)
+# === 💾 저장 ===
+insight_data = {
+    "date": today,
+    "insight": insight_text
+}
 
-print(f"🎬 유튜브 해설 스크립트 생성 완료: {script_path}\n")
-print("🗣️ 미리보기 ↓\n")
-print(anchor_script[:800])
+insight_output_path.parent.mkdir(parents=True, exist_ok=True)
+with open(insight_output_path, "w", encoding="utf-8") as f:
+    json.dump(insight_data, f, ensure_ascii=False, indent=2)
+
+print(f"✅ 인사이트 분석 완료: {insight_output_path}")
+print(f"💡 요약 내용: {insight_text}")
