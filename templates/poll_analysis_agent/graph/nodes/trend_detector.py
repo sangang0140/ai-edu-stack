@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 trend_detector.py
-AI 여론 리포트 자동화 템플릿 - 트렌드 감지 노드 (OpenAI SDK v1.x 대응)
+AI 여론 리포트 자동화 템플릿 - 트렌드 감지 노드 (OpenAI SDK v1.x 대응, 크로스 플랫폼 버전)
 """
 
 import os
@@ -14,8 +14,9 @@ from openai import OpenAI
 # === 🔑 OpenAI API Key 로드 ===
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
+# 로컬 환경에서 openai_key.txt 파일로 대체
 if not openai_api_key:
-    key_path = Path(__file__).resolve().parents[2] / "config" / "openai_key.txt"
+    key_path = Path.cwd() / "templates" / "poll_analysis_agent" / "config" / "openai_key.txt"
     if key_path.exists():
         openai_api_key = key_path.read_text(encoding="utf-8").strip()
 
@@ -24,9 +25,9 @@ if not openai_api_key:
 
 client = OpenAI(api_key=openai_api_key)
 
-# === 📂 OS 독립 경로 설정 ===
+# === 📂 경로 자동 인식 (Windows + Linux 호환) ===
 today = datetime.now().strftime("%Y-%m-%d")
-base_dir = Path(__file__).resolve().parents[2]
+base_dir = Path.cwd() / "templates" / "poll_analysis_agent"
 raw_path = base_dir / "data" / "raw" / f"poll_data_{today}.json"
 trend_output_path = base_dir / "data" / "processed" / f"trend_summary_{today}.json"
 
@@ -41,7 +42,13 @@ with open(raw_path, "r", encoding="utf-8") as f:
     poll_data = json.load(f)
 
 # === 🧮 트렌드 계산 ===
-df = pd.DataFrame(poll_data["results"])
+# poll_data["party"] 구조를 직접 DataFrame으로 변환 (poll_collector.py 포맷에 맞춤)
+party_data = poll_data.get("party", {})
+if not party_data:
+    raise ValueError("⚠️ 'party' 데이터가 누락되었습니다. poll_collector.py 출력을 확인하세요.")
+
+df = pd.DataFrame(list(party_data.items()), columns=["party", "approval"])
+df["previous"] = df["approval"] - 0.5  # 임시 전주 대비 변화치 (예시)
 df["change"] = df["approval"] - df["previous"]
 
 trend_up = df[df["change"] > 0]["party"].tolist()
