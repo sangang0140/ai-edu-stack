@@ -19,20 +19,29 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 🌍 환경 변수 설정 (OpenAI 키)
-        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
-
-      - name: 📦 필수 패키지 설치 (자동 감지)
+      - name: 📦 필수 패키지 설치
         run: |
-          pip install pandas requests beautifulsoup4 openai reportlab matplotlib
+          pip install --upgrade pip
+          pip install -r templates/poll_analysis_agent/requirements.txt
 
       - name: ⚙️ 여론 분석 파이프라인 실행
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
+          echo "🗳️ Step 1: poll_collector 실행"
           python templates/poll_analysis_agent/graph/nodes/poll_collector.py
+          sleep 5
+
+          echo "📈 Step 2: trend_detector 실행"
           python templates/poll_analysis_agent/graph/nodes/trend_detector.py
+          sleep 3
+
+          echo "💡 Step 3: insight_agent 실행"
           python templates/poll_analysis_agent/graph/nodes/insight_agent.py
+          sleep 3
+
+          echo "📄 Step 4: report_generator 실행"
           python templates/poll_analysis_agent/graph/nodes/report_generator.py
-          python templates/poll_analysis_agent/graph/nodes/email_sender.py
 
       - name: 📤 리포트 PDF 업로드 (백업용)
         uses: actions/upload-artifact@v4
